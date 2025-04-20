@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.1">
+    <title>Islamic Revert Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Light theme (default) */
+            --primary: #1E3A8A;
+            --primary-light: #2D4BA0;
+            --secondary: #2C4DDB;
+            --accent: #FFD700;
+            --accent-light: #FFDE2E;
+            --background: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #1A202C;
+            --text-light: #4A5568;
+            --text-primary: #2B3F87;
+            --text-secondary: #3754BD;
+            --heading-highlight: rgba(44, 77, 219, 0.08);
+            --text-highlight: rgba(255, 215, 0, 0.15);
+            --shadow: rgba(17, 17, 26, 0.05);
+            --shadow-hover: rgba(17, 17, 26, 0.1);
+            --border: #E5E7EB;
+            --expandable-bg: #F1F5F9;
+            --expandable-hover: #E2E8F0;
+        }
+
+        [data-theme="dark"] {
+            /* Dark theme */
+            --primary: #1E3A8A;
+            --primary-light: #2D4BA0;
+            --secondary: #4362ED;
+            --accent: #FFD700;
+            --accent-light: #FFDE2E;
+            --background: #121827;
+            --card-bg: #1E293B;
+            --text: #F1F5F9;
+            --text-light: #CBD5E1;
+            --text-primary: #A3BFFA;
+            --text-secondary: #93C5FD;
+            --heading-highlight: rgba(67, 98, 237, 0.15);
+            --text-highlight: rgba(255, 215, 0, 0.1);
+            --shadow: rgba(0, 0, 0, 0.2);
+            --shadow-hover: rgba(0, 0, 0, 0.3);
+            --border: #334155;
+            --expandable-bg: #283548;
+            --expandable-hover: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--background);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-attachment: fixed;
+            transition: background 0.3s ease;
+            letter-spacing: -0.011em;
+            font-size: 1.05rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            transition: background 0.3s ease;
+        }
+
+        header:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+            opacity: 0.7;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            color: white;
+            font-weight: 800;
+            position: relative;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--primary);
+            transition: color 0.3s ease;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.25rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            border-radius: 3px;
+        }
+
+        section h2 {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            margin-left: -0.5rem;
+            background: var(--heading-highlight);
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 1.2rem 0 0.8rem;
+            color: var(--secondary);
+            transition: color 0.3s ease;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        .card p {
+            color: var(--text-light);
+        }
+
+        .card strong, .card b {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.8rem 2.2rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: all 0.3s ease-in-out, background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            margin-bottom: 1.8rem;
+            border-left: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-left-color: var(--primary);
+            box-shadow: 0 12px 30px var(--shadow-hover);
+        }
+
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover:before {
+            opacity: 1;
+        }
+
+        .highlight {
+            background: var(--text-highlight);
+            padding: 0.1em 0.3em;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        .card > p:first-of-type {
+            font-size: 1.1rem;
+            color: var(--text);
+            font-weight: 500;
+            line-height: 1.7;
+        }
+
+        .cta-button, .btn {
+            display: inline-block;
+            padding: 0.9em 2.2em;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            color: white;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease, background 0.3s ease, transform 0.2s ease;
+            margin: 1.2rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3);
+            font-size: 1.05rem;
+        }
+
+        .cta-button:hover, .btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(30, 58, 138, 0.4);
+            background: linear-gradient(to right, var(--primary-light), var(--secondary));
+        }
+
+        .cta-button:active, .btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .flex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            padding: 1em 0;
+        }
+
+        .flex-item {
+            flex: 1 1 300px;
+            min-width: 300px;
+            max-width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .flex-item h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .flex-item h3 i {
+            color: var(--accent);
+            font-size: 1.1em;
+        }
+
+        .expandable-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.2rem;
+            background-color: var(--expandable-bg);
+            border-radius: 12px;
+            transition: all 0.3s ease, background-color 0.3s ease;
+            margin-top: 0.8rem;
+            font-weight: 500;
+        }
+
+        .expandable-header:hover {
+            background-color: var(--expandable-hover);
+        }
+
+        .expandable-header i {
+            transition: transform 0.3s ease;
+        }
+
+        .expandable-header.active i {
+            transform: rotate(180deg);
+        }
+
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            padding: 0 1rem;
+        }
+
+        .expandable-content.open {
+            max-height: 1000px;
+            transition: max-height 0.6s ease-in-out;
+            padding: 1rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 54px;
+            height: 54px;
+            line-height: 54px;
+            text-align: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1) translateY(-3px);
+            background: var(--primary-light);
+        }
+
+        .resource-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .resource-list li {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid var(--border);
+            transition: border 0.3s ease, transform 0.3s ease;
+        }
+
+        .resource-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .resource-list a {
+            color: var(--secondary);
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s ease;
+            font-weight: 600;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .resource-list a:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-list li:hover a:before {
+            transform: translateX(5px);
+        }
+
+        .resource-list a:hover {
+            color: var(--primary);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-top: auto;
+            text-align: center;
+            transition: background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+        }
+
+        .social-links {
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Theme Switcher Styles */
+        .theme-switch-wrapper {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+            padding: 6px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .theme-switch-wrapper:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-switch {
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            position: relative;
+        }
+
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        input:checked + .slider {
+            background-color: var(--secondary);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider:after {
+            content: '☀️';
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            font-size: 14px;
+            transition: .4s;
+            opacity: 1;
+        }
+
+        input:checked + .slider:after {
+            content: '🌙';
+            left: 36px;
+            opacity: 1;
+        }
+
+        /* List styles */
+        ul, ol {
+            padding-left: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        ul li, ol li {
+            margin-bottom: 0.7rem;
+            position: relative;
+            color: var(--text);
+        }
+
+        ul li strong, ol li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Icons in headers */
+        h2 i, h3 i {
+            margin-right: 0.5rem;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover h2 i {
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .flex-grid {
+                flex-direction: column;
+            }
+            .card {
+                padding: 1.5rem 1.8rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .theme-switch-wrapper {
+                top: 10px;
+                right: 10px;
+            }
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Switch Button -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider"></div>
+        </label>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>Islamic Revert Guide</h1>
+            <p>Resources and guidance for new Muslims and those interested in Islam</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="intro" class="card">
+            <h2><i class="fas fa-star"></i> Welcome to Islam</h2>
+            <p>Congratulations on your journey to Islam! The word "<span class="highlight">revert</span>" is often used instead of "convert" because in Islam, it's believed that everyone is born in a natural state of submission to God (Islam), and later life circumstances lead people away from this path. So when someone embraces Islam, they're actually "reverting" back to their natural state.</p>
+            <p>This guide aims to provide essential information, resources, and support for your journey as a new Muslim. Remember that your journey is personal, and it's okay to progress at your own pace.</p>
+        </section>
+
+        <section id="basics" class="card">
+            <h2><i class="fas fa-mosque"></i> The Essential Beliefs</h2>
+            <p>Islam is built upon six fundamental beliefs and five practical pillars:</p>
+            
+            <h3>Six Articles of Faith:</h3>
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3><i class="fas fa-star-and-crescent"></i> Belief in Allah</h3>
+                    <p>Belief in the One God, known as Allah in Arabic, who is unique, incomparable, and the only one worthy of worship.</p>
+                </div>
+                <div class="card flex-item">
+                    <h3><i class="fas fa-feather-alt"></i> Belief in Angels</h3>
+                    <p>Belief in Allah's angels, created from light, who never disobey Allah and carry out His commands.</p>
+                </div>
+                <div class="card flex-item">
+                    <h3><i class="fas fa-book"></i> Belief in Divine Books</h3>
+                    <p>Belief in Allah's books, including the Quran, Torah, Psalms, and Gospel in their original form.</p>
+                </div>
+                <div class="card flex-item">
+                    <h3><i class="fas fa-user"></i> Belief in Prophets</h3>
+                    <p>Belief in Allah's messengers, including Adam, Abraham, Moses, Jesus, and Muhammad (peace be upon them all).</p>
+                </div>
+                <div class="card flex-item">
+                    <h3><i class="fas fa-calendar-day"></i> Belief in the Day of Judgment</h3>
+                    <p>Belief in the Day of Judgment, when everyone will be held accountable for their actions.</p>
+                </div>
+                <div class="card flex-item">
+                    <h3><i class="fas fa-balance-scale"></i> Belief in Divine Decree</h3>
+                    <p>Belief in Allah's divine decree, that nothing happens without His knowledge and permission.</p>
+                </div>
+            </div>
+
+            <h3>Five Pillars of Islam:</h3>
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3><i class="fas fa-hands-praying"></i> Shahada</h3>
+                    <p>The testimony of faith: "There is no god but Allah, and Muhammad is His messenger."</p>
+                    <div class="expandable-header">
+                        <span>Learn More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="expandable-content">
+                        <p>The Shahada (testimony of faith) is the first pillar of Islam and the gateway to becoming Muslim. When you declare this with sincere belief, you become a Muslim. In Arabic, it's pronounced: "Ash-hadu an la ilaha illa Allah, wa ash-hadu anna Muhammadan Rasul Allah."</p>
+                    </div>
+                </div>
+                <div class="card flex-item">
+                    <h3><i class="fas fa-praying-hands"></i> Salah</h3>
+                    <p>The five daily prayers that establish a direct connection with Allah.</p>
+                    <div class="expandable-header">
+                        <span>Learn More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="expandable-content">
+                        <p>Muslims pray five times daily: Fajr (dawn), Dhuhr (noon), Asr (afternoon), Maghrib (sunset), and Isha (night). Prayer involves physical movements and recitations, creating a comprehensive connection with Allah. Before praying, Muslims perform wudu (ablution) to purify themselves.</p>
+                    </div>
+                </div>
+                <div class="card flex-item">
+                    <h3><i class="fas fa-hand-holding-dollar"></i> Zakat</h3>
+                    <p>Annual charity of 2.5% of one's wealth, purifying wealth and helping those in need.</p>
+                    <div class="expandable-header">
+                        <span>Learn More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="expandable-content">
+                        <p>Zakat is an annual obligation for Muslims who possess wealth above a specific threshold (nisab). It's calculated at 2.5% of eligible wealth after one lunar year of ownership. Zakat helps purify wealth and supports the poor, needy, and other specified categories of recipients.</p>
+                    </div>
+                </div>
+                <div class="card flex-item">
+                    <h3><i class="fas fa-moon"></i> Sawm</h3>
+                    <p>Fasting during the month of Ramadan, abstaining from food, drink, and physical desires from dawn to sunset.</p>
+                    <div class="expandable-header">
+                        <span>Learn More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="expandable-content">
+                        <p>During Ramadan, the ninth month of the Islamic calendar, Muslims fast from dawn until sunset. Fasting means abstaining from food, drink, smoking, and marital relations during daylight hours. It teaches self-discipline, empathy for the less fortunate, and spiritual awareness. Those who are sick, traveling, elderly, pregnant, nursing, or menstruating are exempted but may make up the days later or give charity instead.</p>
+                    </div>
+                </div>
+                <div class="card flex-item">
+                    <h3><i class="fas fa-kaaba"></i> Hajj</h3>
+                    <p>Pilgrimage to Mecca, obligatory once in a lifetime for those who are physically and financially able.</p>
+                    <div class="expandable-header">
+                        <span>Learn More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="expandable-content">
+                        <p>Hajj is the annual pilgrimage to Mecca, Saudi Arabia, during the Islamic month of Dhul Hijjah. It's obligatory once in a lifetime for Muslims who are physically and financially able. Hajj commemorates the experiences of Prophet Ibrahim and his family, and represents unity, equality, and submission to Allah.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prayer" class="card">
+            <h2><i class="fas fa-praying-hands"></i> Learning How to Pray</h2>
+            <p>Prayer (Salah) is essential in Islam and performed five times daily. Here's a simplified guide to help you get started:</p>
+            
+            <h3>Steps to Perform Wudu (Ablution)</h3>
+            <ol>
+                <li>Make the intention (niyyah) to perform wudu</li>
+                <li>Say "Bismillah" (In the name of Allah)</li>
+                <li>Wash hands up to the wrists three times</li>
+                <li>Rinse mouth and nose three times</li>
+                <li>Wash face from forehead to chin and ear to ear three times</li>
+                <li>Wash arms up to the elbows three times (right arm first)</li>
+                <li>Wipe the top of the head with wet hands once</li>
+                <li>Wipe over and behind the ears with wet fingers once</li>
+                <li>Wash feet up to the ankles three times (right foot first)</li>
+            </ol>
+
+            <h3>Basic Prayer Steps</h3>
+            <ol>
+                <li>Stand facing the Qibla (direction of the Kaaba in Mecca)</li>
+                <li>Make the intention for the specific prayer</li>
+                <li>Raise hands to shoulders or ears saying "Allahu Akbar" (Allah is Greatest)</li>
+                <li>Place right hand over left on chest</li>
+                <li>Recite the opening chapter of the Quran (Surah Al-Fatiha) and another short passage</li>
+                <li>Bow (Ruku) saying "Allahu Akbar"</li>
+                <li>Rise saying "Sami'a Allahu liman hamidah" (Allah hears those who praise Him)</li>
+                <li>Prostrate (Sujood) saying "Allahu Akbar"</li>
+                <li>Sit between prostrations saying "Allahu Akbar"</li>
+                <li>Prostrate again saying "Allahu Akbar"</li>
+                <li>Complete the remaining units (rak'ahs) similarly</li>
+                <li>At the end, recite the tashahhud and salutations to the Prophet</li>
+                <li>Conclude by turning head right and left saying "Assalamu alaikum wa rahmatullah"</li>
+            </ol>
+            
+            <p>It's normal to find prayer challenging at first. Consider using a prayer guide or app, and remember that improvement comes with practice. Learning from another Muslim in person can be extremely helpful.</p>
+            
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3>Prayer Times</h3>
+                    <ul>
+                        <li><strong>Fajr:</strong> Dawn, before sunrise</li>
+                        <li><strong>Dhuhr:</strong> Midday, after the sun passes its zenith</li>
+                        <li><strong>Asr:</strong> Afternoon</li>
+                        <li><strong>Maghrib:</strong> Just after sunset</li>
+                        <li><strong>Isha:</strong> Night, after twilight disappears</li>
+                    </ul>
+                    <p>Prayer times vary by location and season. Use a prayer time app, mosque schedule, or website to find accurate times for your area.</p>
+                </div>
+                <div class="card flex-item">
+                    <h3>Tips for New Muslims</h3>
+                    <ul>
+                        <li>Start with learning one prayer at a time</li>
+                        <li>Use transliteration until you memorize the Arabic</li>
+                        <li>Download a prayer app with step-by-step guidance</li>
+                        <li>Practice with another Muslim if possible</li>
+                        <li>Be patient with yourself as you learn</li>
+                        <li>Focus on the meaning of what you're saying</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="lifestyle" class="card">
+            <h2><i class="fas fa-hand-point-right"></i> Essential Lifestyle Changes</h2>
+            
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3><i class="fas fa-utensils"></i> Halal Food</h3>
+                    <p>Muslims follow a dietary code called halal (permissible). This includes:</p>
+                    <ul>
+                        <li>Avoiding pork and pork-derived products</li>
+                        <li>Eating only meat that has been slaughtered according to Islamic guidelines</li>
+                        <li>Avoiding alcohol and intoxicants</li>
+                        <li>Avoiding food containing animal-derived ingredients from non-halal sources</li>
+                    </ul>
+                    <p>Look for "halal certified" labels or eat vegetarian/seafood when unsure.</p>
+                </div>
+                
+                <div class="card flex-item">
+                    <h3><i class="fas fa-tshirt"></i> Islamic Dress</h3>
+                    <p>Islamic clothing emphasizes modesty:</p>
+                    <ul>
+                        <li><strong>For women:</strong> Covering the body except for face and hands, with loose-fitting clothes that don't reveal body shape</li>
+                        <li><strong>For men:</strong> Covering from navel to knee at minimum, with modest clothing</li>
+                    </ul>
+                    <p>Many women choose to wear the hijab (headscarf) as part of their religious practice. Adopt Islamic dress at a pace that feels comfortable to you while respecting the principles.</p>
+                </div>
+            </div>
+            
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3><i class="fas fa-people-arrows"></i> Social Interactions</h3>
+                    <p>Islam encourages respectful interactions:</p>
+                    <ul>
+                        <li>Maintaining modesty in mixed-gender settings</li>
+                        <li>Avoiding physical contact with non-mahram (eligible for marriage) individuals of the opposite gender</li>
+                        <li>Being mindful about attending events with alcohol or inappropriate activities</li>
+                    </ul>
+                    <p>Finding balance in maintaining previous relationships while adhering to Islamic principles can be challenging but rewarding.</p>
+                </div>
+                
+                <div class="card flex-item">
+                    <h3><i class="fas fa-heart"></i> Character Development</h3>
+                    <p>Islam emphasizes developing good character:</p>
+                    <ul>
+                        <li>Truthfulness and honesty</li>
+                        <li>Patience and perseverance</li>
+                        <li>Kindness and compassion</li>
+                        <li>Humility and gratitude</li>
+                        <li>Controlling anger and forgiving others</li>
+                    </ul>
+                    <p>Prophet Muhammad (peace be upon him) said: "I was sent to perfect good character." Working on character development is an essential part of being a Muslim.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="community" class="card">
+            <h2><i class="fas fa-hands-helping"></i> Finding Community Support</h2>
+            <p>Building connections with other Muslims is crucial for your journey:</p>
+            
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3><i class="fas fa-mosque"></i> Connecting with a Mosque</h3>
+                    <p>Visiting your local mosque can provide spiritual growth and community:</p>
+                    <ul>
+                        <li>Attend Friday prayers (Jumu'ah)</li>
+                        <li>Participate in educational programs</li>
+                        <li>Join community events</li>
+                        <li>Seek guidance from the imam</li>
+                    </ul>
+                    <p>Most mosques welcome newcomers and have resources specifically for new Muslims.</p>
+                </div>
+                
+                <div class="card flex-item">
+                    <h3><i class="fas fa-user-friends"></i> Finding a Mentor</h3>
+                    <p>A knowledgeable mentor can provide personal guidance:</p>
+                    <ul>
+                        <li>Ask at your local mosque for mentorship programs</li>
+                        <li>Connect with revert support organizations</li>
+                        <li>Look for community members who demonstrate good character</li>
+                        <li>Consider online mentorship if local options are limited</li>
+                    </ul>
+                    <p>Choose a mentor who is patient, knowledgeable, and respects your journey.</p>
+                </div>
+            </div>
+            
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3><i class="fas fa-users"></i> Navigating the Muslim Community</h3>
+                    <p>The Muslim community is diverse with various cultural practices:</p>
+                    <ul>
+                        <li>Distinguish between religious requirements and cultural practices</li>
+                        <li>Seek knowledge from reliable sources</li>
+                        <li>Be patient with different perspectives</li>
+                        <li>Focus on core principles rather than differences</li>
+                    </ul>
+                    <p>Remember that Muslims are human and may not always represent Islam perfectly. Focus on the teachings rather than individuals' actions.</p>
+                </div>
+                
+                <div class="card flex-item">
+                    <h3><i class="fas fa-home"></i> Family Relations</h3>
+                    <p>Navigating relationships with non-Muslim family can be challenging:</p>
+                    <ul>
+                        <li>Maintain good relations with family members</li>
+                        <li>Demonstrate Islam through good character</li>
+                        <li>Be patient with misunderstandings</li>
+                        <li>Share information gradually without overwhelming</li>
+                        <li>Respect differing beliefs while maintaining your own</li>
+                    </ul>
+                    <p>Prophet Muhammad (peace be upon him) emphasized maintaining family ties, even with family members of different faiths.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="learning" class="card">
+            <h2><i class="fas fa-book-reader"></i> Continuing Your Islamic Education</h2>
+            <p>Learning is a lifelong journey in Islam. Here are some key areas to focus on:</p>
+            
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3><i class="fas fa-quran"></i> Quran Study</h3>
+                    <p>The Quran is Allah's direct word and the primary source of Islamic teachings:</p>
+                    <ul>
+                        <li>Start with an accessible translation</li>
+                        <li>Learn to recite in Arabic gradually</li>
+                        <li>Join a Quran study circle</li>
+                        <li>Use apps with recitation and translation</li>
+                    </ul>
+                    <p>Even reading a small portion daily can have a profound impact on your spiritual growth.</p>
+                </div>
+                
+                <div class="card flex-item">
+                    <h3><i class="fas fa-user"></i> Prophet's Life (Seerah)</h3>
+                    <p>Learning about Prophet Muhammad's life provides practical examples of Islamic teachings:</p>
+                    <ul>
+                        <li>Read beginner-friendly biographies</li>
+                        <li>Learn about his character and interactions</li>
+                        <li>Study how he implemented Islamic teachings</li>
+                        <li>Understand the historical context of Islam's development</li>
+                    </ul>
+                    <p>The Prophet's life serves as the best model for implementing Islamic principles.</p>
+                </div>
+            </div>
+            
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3><i class="fas fa-language"></i> Arabic Language</h3>
+                    <p>Learning Arabic enhances your connection with Islamic texts:</p>
+                    <ul>
+                        <li>Start with the Arabic alphabet</li>
+                        <li>Learn common Islamic phrases</li>
+                        <li>Study Quranic vocabulary</li>
+                        <li>Consider online courses or local classes</li>
+                    </ul>
+                    <p>Even basic Arabic knowledge can significantly enhance your understanding of prayers and the Quran.</p>
+                </div>
+                
+                <div class="card flex-item">
+                    <h3><i class="fas fa-balance-scale"></i> Islamic Ethics and Laws</h3>
+                    <p>Understanding Islamic guidance for daily life situations:</p>
+                    <ul>
+                        <li>Learn the principles behind Islamic rulings</li>
+                        <li>Study fiqh (Islamic jurisprudence) basics</li>
+                        <li>Understand differences of opinion on various matters</li>
+                        <li>Apply ethical teachings in modern contexts</li>
+                    </ul>
+                    <p>Focus on understanding the wisdom behind Islamic guidance rather than just rules.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="card">
+            <h2><i class="fas fa-mountain"></i> Common Challenges and Solutions</h2>
+            <p>Many new Muslims face similar challenges. Here are some common ones with potential solutions:</p>
+            
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3><i class="fas fa-pray"></i> Difficulty with Prayer</h3>
+                    <p>Many new Muslims struggle with prayer routines:</p>
+                    <ul>
+                        <li>Start with one or two prayers daily and gradually increase</li>
+                        <li>Use prayer apps with notifications</li>
+                        <li>Prepare prayer cheat sheets until memorized</li>
+                        <li>Find a prayer partner for accountability</li>
+                    </ul>
+                    <p>Remember that consistency is more important than perfection.</p>
+                </div>
+                
+                <div class="card flex-item">
+                    <h3><i class="fas fa-user-friends"></i> Family Opposition</h3>
+                    <p>Family resistance to conversion is common:</p>
+                    <ul>
+                        <li>Demonstrate improved character rather than preaching</li>
+                        <li>Maintain relationships and fulfill family duties</li>
+                        <li>Seek compromise on cultural practices where possible</li>
+                        <li>Find support from other Muslims facing similar situations</li>
+                    </ul>
+                    <p>Time, patience, and good conduct often soften initial opposition.</p>
+                </div>
+            </div>
+            
+            <div class="flex-grid">
+                <div class="card flex-item">
+                    <h3><i class="fas fa-heart-broken"></i> Isolation and Loneliness</h3>
+                    <p>Feeling disconnected is a common experience:</p>
+                    <ul>
+                        <li>Join activities at your local mosque</li>
+                        <li>Connect with revert support groups</li>
+                        <li>Maintain appropriate relations with previous friends</li>
+                        <li>Volunteer for Islamic organizations</li>
+                        <li>Consider online Muslim communities</li>
+                    </ul>
+                    <p>Building a new social circle takes time—be patient and proactive.</p>
+                </div>
+                
+                <div class="card flex-item">
+                    <h3><i class="fas fa-question-circle"></i> Information Overload</h3>
+                    <p>Feeling overwhelmed by new information:</p>
+                    <ul>
+                        <li>Focus on essentials first (beliefs and basic practices)</li>
+                        <li>Take a structured approach to learning</li>
+                        <li>Set realistic goals for implementing changes</li>
+                        <li>Distinguish between obligations and recommendations</li>
+                        <li>Remember that Islam is meant to be implemented gradually</li>
+                    </ul>
+                    <p>The Prophet Muhammad (peace be upon him) established Islam over 23 years, not overnight.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="card">
+            <h2><i class="fas fa-link"></i> Learning Resources</h2>
+            <div class="flex-grid">
+                <section class="card flex-item">
+                    <h3>Comprehensive Revert Guides & Organizations</h3>
+                    <ul class="resource-list" id="resource-list">
+                    </ul>
+                </section>
+                <section class="card flex-item">
+                    <h3>Recommended Books for New Muslims</h3>
+                    <ul>
+                        <li>The Quran: A New Translation by M.A.S. Abdel Haleem</li>
+                        <li>The Clear Quran translated by Dr. Mustafa Khattab</li>
+                        <li>The New Muslim Guide by Fahd Salem Bahammam</li>
+                        <li>The New Muslim's Field Guide by Theresa Corbin and Kaighla Um Dayo</li>
+                        <li>Welcome to Islam: A Step-by-Step Guide for New Muslims by Mustafa Umar</li>
+                        <li>How to Pray: A Step-by-Step Guide to Prayer in Islam by Mustafa Umar</li>
+                        <li>Reclaim Your Heart by Yasmin Mogahed</li>
+                        <li>Being Muslim: A Practical Guide by Asad Tarsin</li>
+                    </ul>
+                </section>
+            </div>
+            <a class="cta-button" href="#resources">Explore Resources</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Islamic Revert Guide &copy; <span id="year">2023</span> All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script>
+        function addResourceItem(title, description, link) {
+            const ul = document.getElementById('resource-list');
+            if (!ul) return;
+
+            let li = document.createElement('li');
+            let a = document.createElement('a');
+            a.href = link;
+            a.textContent = title;
+            li.appendChild(a);
+            
+            if (description) {
+                let p = document.createElement('p');
+                p.textContent = description;
+                li.appendChild(p);
+            }
+            
+            ul.appendChild(li);
+        }
+
+        // Apply highlight class to key terms in the document
+        function highlightKeyTerms() {
+            const keyTerms = [
+                'Shahada', 'Salah', 'Zakat', 'Sawm', 'Hajj', 
+                'Allah', 'Quran', 'Sunnah', 'Prophet Muhammad', 'Ramadan',
+                'wudu', 'prayer', 'fasting', 'halal'
+            ];
+            
+            const paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach(p => {
+                // Skip paragraphs that already have highlights
+                if (p.querySelector('.highlight')) return;
+                
+                keyTerms.forEach(term => {
+                    // Create regex that matches the term as a whole word with case insensitivity
+                    const regex = new RegExp(`\\b${term}\\b`, 'gi');
+                    
+                    // Only replace text nodes (not inside existing elements)
+                    const walker = document.createTreeWalker(p, NodeFilter.SHOW_TEXT);
+                    const textNodes = [];
+                    let node;
+                    while (node = walker.nextNode()) {
+                        textNodes.push(node);
+                    }
+                    
+                    textNodes.forEach(textNode => {
+                        const content = textNode.nodeValue;
+                        if (regex.test(content)) {
+                            const fragment = document.createDocumentFragment();
+                            let lastIndex = 0;
+                            let match;
+                            
+                            // Reset regex to start from beginning
+                            regex.lastIndex = 0;
+                            
+                            while ((match = regex.exec(content)) !== null) {
+                                // Add text before the match
+                                if (match.index > lastIndex) {
+                                    fragment.appendChild(document.createTextNode(
+                                        content.substring(lastIndex, match.index)
+                                    ));
+                                }
+                                
+                                // Create highlighted span for the match
+                                const highlightSpan = document.createElement('span');
+                                highlightSpan.className = 'highlight';
+                                highlightSpan.textContent = match[0];
+                                fragment.appendChild(highlightSpan);
+                                
+                                lastIndex = regex.lastIndex;
+                            }
+                            
+                            // Add remaining text
+                            if (lastIndex < content.length) {
+                                fragment.appendChild(document.createTextNode(
+                                    content.substring(lastIndex)
+                                ));
+                            }
+                            
+                            // Replace the text node with the fragment
+                            textNode.parentNode.replaceChild(fragment, textNode);
+                        }
+                    });
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Theme switcher functionality
+            const toggleSwitch = document.querySelector('#checkbox');
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            
+            // Set initial theme based on localStorage or system preference
+            if (currentTheme === 'dark' || (currentTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                toggleSwitch.checked = true;
+            }
+            
+            // Function to switch theme
+            function switchTheme(e) {
+                if (e.target.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                }
+            }
+            
+            // Event listener for theme switch
+            toggleSwitch.addEventListener('change', switchTheme, false);
+
+            // Add resource items
+            addResourceItem('Hope & Help UK', 'Offering revert Muslim support programs including personalized guidance, post-Shahadah support, and community integration.', 'https://hopeandhelp.uk/revert-muslim/');
+            addResourceItem('NewMuslims.com', 'A structured eLearning site with lessons ranging from Level 1 to Level 10, covering Islamic beliefs, worship, and social interaction.', 'https://www.newmuslims.com/');
+            addResourceItem('About Islam Seerah', 'Special folder for new converts covering the life of Prophet Muhammad with articles and videos.', 'https://aboutislam.net/reading-islam/in-focus/seerah-for-new-converts-special-folder/');
+            addResourceItem('Why Islam Manual', 'A quick start guide for new Muslims with tips on finding an Islamic mentor and recommended resources.', 'https://www.whyislam.org/manual/');
+            addResourceItem('Embrace Reverts', 'Offering programs to empower and integrate Muslim converts through social and educational spaces.', 'https://embracereverts.org/');
+            addResourceItem('American Islam New Members', 'Resources and support groups for new Muslims, including classes and community activities.', 'https://american-islam.org/new-members/');
+            addResourceItem('GainPeace New Muslim Services', 'Providing services that offer social support, education, and mentorship to new Muslims.', 'https://www.gainpeace.com/new-muslim-services');
+            addResourceItem('The Revert Channel', 'Video content created by and for Muslim converts.', 'https://www.therevertchannel.com/');
+            addResourceItem('Reverts Guide.com', 'Practical guidance for new Muslims on various aspects of Islamic life.', 'https://revertsguide.com/');
+
+            // Highlight key terms
+            highlightKeyTerms();
+
+            // Initialize expandable sections
+            const expandableHeaders = document.querySelectorAll('.expandable-header');
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    header.classList.toggle('active');
+                    
+                    if (header.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        content.classList.add('open');
+                        header.querySelector('i').classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    } else {
+                        content.style.maxHeight = 0;
+                        content.classList.remove('open');
+                        header.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    }
+                });
+            });
+
+            // Back to top button
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Update year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Initialize ScrollReveal with enhanced animations
+            ScrollReveal().reveal('.card', { 
+                delay: 200,
+                distance: '30px',
+                duration: 800,
+                easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                origin: 'bottom',
+                interval: 100,
+                opacity: 0,
+                scale: 0.98
+            });
+        });
+    </script>
+</body>
+</html>
