@@ -570,6 +570,258 @@
                 padding: 0 16px;
             }
         }
+
+        /* Quran Section Styles */
+        .quran-container {
+            margin: 2rem 0;
+        }
+        
+        .surah-card {
+            margin-bottom: 2.5rem;
+            padding: 0.5rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(44, 77, 219, 0.05) 100%);
+            border: 1px solid var(--border);
+        }
+        
+        .surah-header {
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .surah-header h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .verse-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .verse {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--card-bg);
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .verse:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow-hover);
+        }
+        
+        .verse:before {
+            content: attr(data-verse);
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 25px;
+            height: 25px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .verse .english {
+            flex: 1;
+            padding-right: 1rem;
+            text-align: left;
+            border-right: 1px solid var(--border);
+        }
+        
+        .verse .arabic {
+            flex: 1;
+            padding-left: 1rem;
+            text-align: right;
+            direction: rtl;
+        }
+        
+        .verse .translation {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .verse .transliteration {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .verse .arabic p {
+            font-size: 1.5rem;
+            line-height: 1.7;
+            font-family: 'Traditional Arabic', 'Scheherazade New', serif;
+            margin: 0;
+        }
+        
+        .quran-tips {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 15px var(--shadow);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .quran-tips h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0;
+        }
+        
+        .quran-tips i {
+            color: var(--accent);
+        }
+        
+        /* Make sure the Quran section is responsive */
+        @media screen and (max-width: 768px) {
+            .verse {
+                flex-direction: column-reverse;
+            }
+            
+            .verse .english {
+                border-right: none;
+                border-top: 1px solid var(--border);
+                padding: 1rem 0 0 0;
+                margin-top: 1rem;
+            }
+            
+            .verse .arabic {
+                padding-left: 0;
+            }
+        }
+
+        h2 a {
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        h2 a:hover {
+            color: var(--secondary);
+        }
+        
+        h2 a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        h2 a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        h2 a:hover + i.fas.fa-external-link-alt {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        h2 a::after {
+            content: "\f35d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 0.6em;
+            position: relative;
+            top: -0.5em;
+            margin-left: 0.4em;
+            opacity: 0.7;
+            display: inline-block;
+        }
+
+        h3 a {
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        h3 a:hover {
+            color: var(--secondary);
+        }
+
+        h3 a::after {
+            content: "\f35d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 0.6em;
+            position: relative;
+            top: -0.5em;
+            margin-left: 0.4em;
+            opacity: 0.7;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        h3 a:hover::after {
+            opacity: 1;
+            transform: translateX(2px);
+        }
+
+        .special-ayah {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.08) 0%, rgba(44, 77, 219, 0.08) 100%);
+            border-left: 4px solid var(--accent);
+        }
+
+        .ayah-significance {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: rgba(255, 215, 0, 0.08);
+            border-radius: 8px;
+        }
+
+        .ayah-significance h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .ayah-significance i {
+            color: var(--accent);
+        }
+
+        .special-ayah .verse .arabic p {
+            font-size: 1.6rem;
+            line-height: 2;
+        }
+
+        @media screen and (max-width: 768px) {
+            .special-ayah .verse .arabic p {
+                font-size: 1.3rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -583,7 +835,7 @@
 
     <header>
         <div class="container">
-            <h1>Islamic Revert Guide</h1>
+        <h1>Islamic Revert Guide</h1>
             <p>Resources and guidance for new Muslims and those interested in Islam</p>
         </div>
     </header>
@@ -688,7 +940,7 @@
         </section>
 
         <section id="prayer" class="card">
-            <h2><i class="fas fa-praying-hands"></i> Learning How to Pray</h2>
+            <h2><i class="fas fa-praying-hands"></i> <a href="https://mhobgstudio.github.io/Salah-app/" target="_blank">Learning How to Pray</a></h2>
             <p>Prayer (Salah) is essential in Islam and performed five times daily. Here's a simplified guide to help you get started:</p>
             
             <h3>Steps to Perform Wudu (Ablution)</h3>
@@ -802,7 +1054,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="community" class="card">
             <h2><i class="fas fa-hands-helping"></i> Finding Community Support</h2>
             <p>Building connections with other Muslims is crucial for your journey:</p>
@@ -893,7 +1145,7 @@
             
             <div class="flex-grid">
                 <div class="card flex-item">
-                    <h3><i class="fas fa-language"></i> Arabic Language</h3>
+                    <h3><i class="fas fa-language"></i> <a href="https://mhobgstudio.github.io/Quranic-Words-App/" target="_blank">Arabic Language</a></h3>
                     <p>Learning Arabic enhances your connection with Islamic texts:</p>
                     <ul>
                         <li>Start with the Arabic alphabet</li>
@@ -905,7 +1157,7 @@
                 </div>
                 
                 <div class="card flex-item">
-                    <h3><i class="fas fa-balance-scale"></i> Islamic Ethics and Laws</h3>
+                    <h3><i class="fas fa-balance-scale"></i> <a href="https://mhobgstudio.github.io/Sharia-Law/" target="_blank">Islamic Ethics and Laws</a></h3>
                     <p>Understanding Islamic guidance for daily life situations:</p>
                     <ul>
                         <li>Learn the principles behind Islamic rulings</li>
@@ -999,7 +1251,317 @@
                     </ul>
                 </section>
             </div>
-            <a class="cta-button" href="#resources">Explore Resources</a>
+            <a class="cta-button" href="#quran-section">Explore Resources</a>
+        </section>
+        
+        <section id="quran-section" class="card">
+            <h2><i class="fas fa-quran"></i> Essential Quranic Surahs</h2>
+            <p>These are some of the most important chapters (surahs) from the Quran that new Muslims often learn first. They include the opening chapter of the Quran (Al-Fatiha) and three short chapters from the end of the Quran that are frequently recited in daily prayers.</p>
+            
+            <div class="quran-container">
+                <!-- Surah Al-Fatiha -->
+                <div class="surah-card">
+                    <div class="surah-header">
+                        <h3>Surah Al-Fatiha (The Opening) - Surah 1</h3>
+                        <p>7 verses - The most important surah in the Quran, recited in every prayer</p>
+                    </div>
+                    
+                    <div class="verse-container">
+                        <div class="verse" data-verse="1">
+                            <div class="english">
+                                <p class="translation">In the name of Allah, the Most Gracious, the Most Merciful</p>
+                                <p class="transliteration">Bismillahi r-rahmani r-raheem</p>
+                            </div>
+                            <div class="arabic">
+                                <p>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="2">
+                            <div class="english">
+                                <p class="translation">All praise is for Allah—Lord of all worlds</p>
+                                <p class="transliteration">Al hamdu lillahi rabbil 'alamin</p>
+                            </div>
+                            <div class="arabic">
+                                <p>الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="3">
+                            <div class="english">
+                                <p class="translation">The Most Compassionate, Most Merciful</p>
+                                <p class="transliteration">Ar-rahmani r-raheem</p>
+                            </div>
+                            <div class="arabic">
+                                <p>الرَّحْمَٰنِ الرَّحِيمِ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="4">
+                            <div class="english">
+                                <p class="translation">Master of the Day of Judgment</p>
+                                <p class="transliteration">Maliki yawmi d-deen</p>
+                            </div>
+                            <div class="arabic">
+                                <p>مَالِكِ يَوْمِ الدِّينِ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="5">
+                            <div class="english">
+                                <p class="translation">You ˹alone˺ we worship and You ˹alone˺ we ask for help</p>
+                                <p class="transliteration">Iyyaka na'budu wa iyyaka nasta'een</p>
+                            </div>
+                            <div class="arabic">
+                                <p>إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="6">
+                            <div class="english">
+                                <p class="translation">Guide us along the Straight Path</p>
+                                <p class="transliteration">Ihdina s-sirata l-mustaqeem</p>
+                            </div>
+                            <div class="arabic">
+                                <p>اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="7">
+                            <div class="english">
+                                <p class="translation">The Path of those You have blessed—not those You are displeased with, or those who are astray</p>
+                                <p class="transliteration">Sirata l-latheena an'amta 'alayhim, ghayri l-maghdubi 'alayhim wa la d-dalleen</p>
+                            </div>
+                            <div class="arabic">
+                                <p>صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Surah Al-Ikhlas -->
+                <div class="surah-card">
+                    <div class="surah-header">
+                        <h3>Surah Al-Ikhlas (Sincerity) - Surah 112</h3>
+                        <p>4 verses - Describes the oneness of Allah; equal to one-third of the Quran in reward</p>
+                    </div>
+                    
+                    <div class="verse-container">
+                        <div class="verse" data-verse="1">
+                            <div class="english">
+                                <p class="translation">Say, "He is Allah, [who is] One"</p>
+                                <p class="transliteration">Qul huwa Allahu ahad</p>
+                            </div>
+                            <div class="arabic">
+                                <p>قُلْ هُوَ اللَّهُ أَحَدٌ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="2">
+                            <div class="english">
+                                <p class="translation">Allah is the Self-Sufficient</p>
+                                <p class="transliteration">Allahu s-samad</p>
+                            </div>
+                            <div class="arabic">
+                                <p>اللَّهُ الصَّمَدُ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="3">
+                            <div class="english">
+                                <p class="translation">He neither begets nor is born</p>
+                                <p class="transliteration">Lam yalid wa lam yulad</p>
+                            </div>
+                            <div class="arabic">
+                                <p>لَمْ يَلِدْ وَلَمْ يُولَدْ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="4">
+                            <div class="english">
+                                <p class="translation">Nor is there to Him any equivalent</p>
+                                <p class="transliteration">Wa lam yakun lahu kufuwan ahad</p>
+                            </div>
+                            <div class="arabic">
+                                <p>وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Surah Al-Falaq -->
+                <div class="surah-card">
+                    <div class="surah-header">
+                        <h3>Surah Al-Falaq (The Daybreak) - Surah 113</h3>
+                        <p>5 verses - A prayer seeking protection from Allah</p>
+                    </div>
+                    
+                    <div class="verse-container">
+                        <div class="verse" data-verse="1">
+                            <div class="english">
+                                <p class="translation">Say, "I seek refuge in the Lord of daybreak"</p>
+                                <p class="transliteration">Qul a'udhu bi rabbi l-falaq</p>
+                            </div>
+                            <div class="arabic">
+                                <p>قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="2">
+                            <div class="english">
+                                <p class="translation">From the evil of that which He created</p>
+                                <p class="transliteration">Min sharri ma khalaq</p>
+                            </div>
+                            <div class="arabic">
+                                <p>مِن شَرِّ مَا خَلَقَ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="3">
+                            <div class="english">
+                                <p class="translation">And from the evil of darkness when it settles</p>
+                                <p class="transliteration">Wa min sharri ghasiqin idha waqab</p>
+                            </div>
+                            <div class="arabic">
+                                <p>وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="4">
+                            <div class="english">
+                                <p class="translation">And from the evil of the blowers in knots</p>
+                                <p class="transliteration">Wa min sharri n-naffathati fi l-'uqad</p>
+                            </div>
+                            <div class="arabic">
+                                <p>وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="5">
+                            <div class="english">
+                                <p class="translation">And from the evil of an envier when he envies</p>
+                                <p class="transliteration">Wa min sharri hasidin idha hasad</p>
+                            </div>
+                            <div class="arabic">
+                                <p>وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Surah An-Nas -->
+                <div class="surah-card">
+                    <div class="surah-header">
+                        <h3>Surah An-Nas (Mankind) - Surah 114</h3>
+                        <p>6 verses - A prayer seeking Allah's protection from evil whispers</p>
+                    </div>
+                    
+                    <div class="verse-container">
+                        <div class="verse" data-verse="1">
+                            <div class="english">
+                                <p class="translation">Say, "I seek refuge in the Lord of mankind"</p>
+                                <p class="transliteration">Qul a'udhu bi rabbi n-nas</p>
+                            </div>
+                            <div class="arabic">
+                                <p>قُلْ أَعُوذُ بِرَبِّ النَّاسِ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="2">
+                            <div class="english">
+                                <p class="translation">The Sovereign of mankind</p>
+                                <p class="transliteration">Maliki n-nas</p>
+                            </div>
+                            <div class="arabic">
+                                <p>مَلِكِ النَّاسِ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="3">
+                            <div class="english">
+                                <p class="translation">The God of mankind</p>
+                                <p class="transliteration">Ilahi n-nas</p>
+                            </div>
+                            <div class="arabic">
+                                <p>إِلَٰهِ النَّاسِ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="4">
+                            <div class="english">
+                                <p class="translation">From the evil of the retreating whisperer</p>
+                                <p class="transliteration">Min sharri l-waswasi l-khannas</p>
+                            </div>
+                            <div class="arabic">
+                                <p>مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="5">
+                            <div class="english">
+                                <p class="translation">Who whispers [evil] into the breasts of mankind</p>
+                                <p class="transliteration">Alladhi yuwaswisu fi suduri n-nas</p>
+                            </div>
+                            <div class="arabic">
+                                <p>الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="verse" data-verse="6">
+                            <div class="english">
+                                <p class="translation">From among the jinn and mankind</p>
+                                <p class="transliteration">Mina l-jinnati wa n-nas</p>
+                            </div>
+                            <div class="arabic">
+                                <p>مِنَ الْجِنَّةِ وَالنَّاسِ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ayatul Kursi -->
+                <div class="surah-card special-ayah">
+                    <div class="surah-header">
+                        <h3>Ayatul Kursi (The Verse of the Throne)</h3>
+                        <p>From Surah Al-Baqarah (2:255) - One of the most powerful verses in the Quran, offering protection and describing Allah's attributes</p>
+                    </div>
+                    
+                    <div class="verse-container">
+                        <div class="verse" data-verse="255">
+                            <div class="english">
+                                <p class="translation">Allah! There is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth. Who is it that can intercede with Him except by His permission? He knows what is before them and what will be after them, and they encompass not a thing of His knowledge except for what He wills. His Kursi extends over the heavens and the earth, and their preservation tires Him not. And He is the Most High, the Most Great.</p>
+                                <p class="transliteration">Allahu la ilaha illa huwa, al-Hayyu al-Qayyum. La ta'khudhuhu sinatun wa la nawm. Lahu ma fis-samawati wa ma fil-ard. Man dhal-ladhi yashfa'u 'indahu illa bi-idhnih. Ya'lamu ma bayna aydihim wa ma khalfahum, wa la yuhituna bi-shay'im-min 'ilmihi illa bima sha'. Wasi'a kursiyyuhus-samawati wal-ard, wa la ya'uduhu hifzuhuma, wa huwal-'Aliyyul-'Azim.</p>
+                            </div>
+                            <div class="arabic">
+                                <p>اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ayah-significance">
+                <h4><i class="fas fa-shield-alt"></i> Significance</h4>
+                <p>The Prophet Muhammad ﷺ said about this verse:</p>
+                <ul>
+                    <li>"Whoever recites Ayatul Kursi after each obligatory prayer, nothing will prevent them from entering Paradise except death." (An-Nasa'i)</li>
+                    <li>"When you go to bed, recite Ayatul Kursi, for there will remain over you a protection from Allah, and no devil will approach you until morning." (Bukhari)</li>
+                </ul>
+            </div>
+            
+            <div class="quran-tips">
+                <h3><i class="fas fa-lightbulb"></i> Tips for Recitation</h3>
+                <ul>
+                    <li>Start with small portions - even one verse at a time</li>
+                    <li>Listen to audio recitations to learn proper pronunciation</li>
+                    <li>Practice daily, even if it's just for a few minutes</li>
+                    <li>Join a Quran study circle if possible</li>
+                    <li>Download a Quran app with audio recitation features</li>
+                </ul>
+                <p>Consider learning Al-Fatiha first, as it's required in every prayer. Then progress to the shorter surahs at the end of the Quran.</p>
+            </div>
+            
+            <a class="cta-button" href="#resources">Back to Resources</a>
         </section>
     </div>
 
