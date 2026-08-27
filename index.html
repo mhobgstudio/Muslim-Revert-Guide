@@ -1,1769 +1,311 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamic Revert Guide - Resources for New Muslims</title>
-    <meta name="description" content="Comprehensive guide for new Muslims (reverts) covering the Six Articles of Faith, Five Pillars, prayer, halal lifestyle, and community support.">
-    <meta property="og:title" content="Islamic Revert Guide">
-    <meta property="og:description" content="Essential resources and guidance for new Muslims and those interested in Islam.">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Light theme (default) */
-            --primary: #1E3A8A;
-            --primary-light: #2D4BA0;
-            --secondary: #2C4DDB;
-            --accent: #FFD700;
-            --accent-light: #FFDE2E;
-            --background: #F8FAFC;
-            --card-bg: #FFFFFF;
-            --text: #1A202C;
-            --text-light: #4A5568;
-            --text-primary: #2B3F87;
-            --text-secondary: #3754BD;
-            --heading-highlight: rgba(44, 77, 219, 0.08);
-            --text-highlight: rgba(255, 215, 0, 0.15);
-            --shadow: rgba(17, 17, 26, 0.05);
-            --shadow-hover: rgba(17, 17, 26, 0.1);
-            --border: #E5E7EB;
-            --expandable-bg: #F1F5F9;
-            --expandable-hover: #E2E8F0;
-        }
-
-        [data-theme="dark"] {
-            /* Dark theme */
-            --primary: #1E3A8A;
-            --primary-light: #2D4BA0;
-            --secondary: #4362ED;
-            --accent: #FFD700;
-            --accent-light: #FFDE2E;
-            --background: #121827;
-            --card-bg: #1E293B;
-            --text: #F1F5F9;
-            --text-light: #CBD5E1;
-            --text-primary: #A3BFFA;
-            --text-secondary: #93C5FD;
-            --heading-highlight: rgba(67, 98, 237, 0.15);
-            --text-highlight: rgba(255, 215, 0, 0.1);
-            --shadow: rgba(0, 0, 0, 0.2);
-            --shadow-hover: rgba(0, 0, 0, 0.3);
-            --border: #334155;
-            --expandable-bg: #283548;
-            --expandable-hover: #334155;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background: var(--background);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-attachment: fixed;
-            transition: background 0.3s ease;
-            letter-spacing: -0.011em;
-            font-size: 1.05rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 3rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 2.5rem;
-            transition: background 0.3s ease;
-        }
-
-        header:before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
-            opacity: 0.7;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.8rem;
-            color: white;
-            font-weight: 800;
-            position: relative;
-            letter-spacing: -0.02em;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        header p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: rgba(255,255,255,0.9);
-            font-weight: 400;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin: 1.5rem 0 1rem;
-            color: var(--primary);
-            transition: color 0.3s ease;
-            font-weight: 700;
-            letter-spacing: -0.015em;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.25rem;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-            border-radius: 3px;
-        }
-
-        section h2 {
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
-            margin-left: -0.5rem;
-            background: var(--heading-highlight);
-            border-radius: 5px;
-        }
-
-        h3 {
-            font-size: 1.4rem;
-            margin: 1.2rem 0 0.8rem;
-            color: var(--secondary);
-            transition: color 0.3s ease;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-
-        p {
-            margin-bottom: 1.2rem;
-            color: var(--text);
-            font-size: 1.05rem;
-            line-height: 1.75;
-        }
-
-        .card p {
-            color: var(--text-light);
-        }
-
-        .card strong, .card b {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 1.8rem 2.2rem;
-            box-shadow: 0 4px 20px var(--shadow);
-            transition: all 0.3s ease-in-out, background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-            margin-bottom: 1.8rem;
-            border-left: 4px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            border-left-color: var(--primary);
-            box-shadow: 0 12px 30px var(--shadow-hover);
-        }
-
-        .card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .card:hover:before {
-            opacity: 1;
-        }
-
-        .highlight {
-            background: var(--text-highlight);
-            padding: 0.1em 0.3em;
-            border-radius: 3px;
-            font-weight: 500;
-        }
-
-        .card > p:first-of-type {
-            font-size: 1.1rem;
-            color: var(--text);
-            font-weight: 500;
-            line-height: 1.7;
-        }
-
-        .cta-button, .btn {
-            display: inline-block;
-            padding: 0.9em 2.2em;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            letter-spacing: 0.03em;
-            color: white;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease, background 0.3s ease, transform 0.2s ease;
-            margin: 1.2rem 0;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3);
-            font-size: 1.05rem;
-        }
-
-        .cta-button:hover, .btn:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 15px rgba(30, 58, 138, 0.4);
-            background: linear-gradient(to right, var(--primary-light), var(--secondary));
-        }
-
-        .cta-button:active, .btn:active {
-            transform: translateY(0) scale(0.98);
-        }
-
-        .flex-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.8rem;
-            padding: 1em 0;
-        }
-
-        .flex-item {
-            flex: 1 1 300px;
-            min-width: 300px;
-            max-width: 100%;
-            transition: transform 0.3s ease;
-        }
-
-        .flex-item h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .flex-item h3 i {
-            color: var(--accent);
-            font-size: 1.1em;
-        }
-
-        .expandable-header {
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.2rem;
-            background-color: var(--expandable-bg);
-            border-radius: 12px;
-            transition: all 0.3s ease, background-color 0.3s ease;
-            margin-top: 0.8rem;
-            font-weight: 500;
-        }
-
-        .expandable-header:hover {
-            background-color: var(--expandable-hover);
-        }
-
-        .expandable-header i {
-            transition: transform 0.3s ease;
-        }
-
-        .expandable-header.active i {
-            transform: rotate(180deg);
-        }
-
-        .expandable-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-            padding: 0 1rem;
-        }
-
-        .expandable-content.open {
-            max-height: 1000px;
-            transition: max-height 0.6s ease-in-out;
-            padding: 1rem;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 54px;
-            height: 54px;
-            line-height: 54px;
-            text-align: center;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-        }
-
-        .back-to-top:hover {
-            transform: scale(1.1) translateY(-3px);
-            background: var(--primary-light);
-        }
-
-        .resource-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .resource-list li {
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px solid var(--border);
-            transition: border 0.3s ease, transform 0.3s ease;
-        }
-
-        .resource-list li:hover {
-            transform: translateX(5px);
-        }
-
-        .resource-list a {
-            color: var(--secondary);
-            text-decoration: none;
-            display: block;
-            transition: color 0.3s ease;
-            font-weight: 600;
-            position: relative;
-            padding-left: 1.5rem;
-            font-size: 1.1rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .resource-list a:before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            transition: transform 0.3s ease;
-        }
-
-        .resource-list li:hover a:before {
-            transform: translateX(5px);
-        }
-
-        .resource-list a:hover {
-            color: var(--primary);
-        }
-
-        footer {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 3rem 0;
-            margin-top: auto;
-            text-align: center;
-            transition: background 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-        }
-
-        .social-links {
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Theme Switcher Styles */
-        .theme-switch-wrapper {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--card-bg);
-            padding: 6px;
-            border-radius: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .theme-switch-wrapper:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .theme-switch {
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-            position: relative;
-        }
-
-        .theme-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        input:checked + .slider {
-            background-color: var(--secondary);
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        .slider:after {
-            content: '☀️';
-            position: absolute;
-            top: 8px;
-            left: 10px;
-            font-size: 14px;
-            transition: .4s;
-            opacity: 1;
-        }
-
-        input:checked + .slider:after {
-            content: '🌙';
-            left: 36px;
-            opacity: 1;
-        }
-
-        /* List styles */
-        ul, ol {
-            padding-left: 1.8rem;
-            margin-bottom: 1.2rem;
-        }
-
-        ul li, ol li {
-            margin-bottom: 0.7rem;
-            position: relative;
-            color: var(--text);
-        }
-
-        ul li strong, ol li strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        /* Icons in headers */
-        h2 i, h3 i {
-            margin-right: 0.5rem;
-            color: var(--accent);
-            transition: transform 0.3s ease;
-        }
-
-        section:hover h2 i {
-            transform: translateY(-2px);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Responsive */
-        @media screen and (max-width: 768px) {
-            .flex-grid {
-                flex-direction: column;
-            }
-            .card {
-                padding: 1.5rem 1.8rem;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            h2 {
-                font-size: 1.6rem;
-            }
-            .theme-switch-wrapper {
-                top: 10px;
-                right: 10px;
-            }
-            .container {
-                padding: 0 16px;
-            }
-        }
-
-        /* Quran Section Styles */
-        .quran-container {
-            margin: 2rem 0;
-        }
-        
-        .surah-card {
-            margin-bottom: 2.5rem;
-            padding: 0.5rem;
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(44, 77, 219, 0.05) 100%);
-            border: 1px solid var(--border);
-        }
-        
-        .surah-header {
-            border-bottom: 1px solid var(--border);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        .surah-header h3 {
-            margin-top: 0;
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-        
-        .verse-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .verse {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            background: var(--card-bg);
-            box-shadow: 0 2px 8px var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-        
-        .verse:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px var(--shadow-hover);
-        }
-        
-        .verse:before {
-            content: attr(data-verse);
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            width: 25px;
-            height: 25px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .verse .english {
-            flex: 1;
-            padding-right: 1rem;
-            text-align: left;
-            border-right: 1px solid var(--border);
-        }
-        
-        .verse .arabic {
-            flex: 1;
-            padding-left: 1rem;
-            text-align: right;
-            direction: rtl;
-        }
-        
-        .verse .translation {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-        
-        .verse .transliteration {
-            font-size: 0.95rem;
-            font-style: italic;
-            color: var(--text-light);
-            margin: 0;
-        }
-        
-        .verse .arabic p {
-            font-size: 1.5rem;
-            line-height: 1.7;
-            font-family: 'Traditional Arabic', 'Scheherazade New', serif;
-            margin: 0;
-        }
-        
-        .quran-tips {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            border-radius: 12px;
-            background-color: var(--card-bg);
-            box-shadow: 0 4px 15px var(--shadow);
-            border-left: 4px solid var(--accent);
-        }
-        
-        .quran-tips h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0;
-        }
-        
-        .quran-tips i {
-            color: var(--accent);
-        }
-        
-        /* Make sure the Quran section is responsive */
-        @media screen and (max-width: 768px) {
-            .verse {
-                flex-direction: column-reverse;
-            }
-            
-            .verse .english {
-                border-right: none;
-                border-top: 1px solid var(--border);
-                padding: 1rem 0 0 0;
-                margin-top: 1rem;
-            }
-            
-            .verse .arabic {
-                padding-left: 0;
-            }
-        }
-
-        h2 a {
-            color: inherit;
-            text-decoration: none;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        h2 a:hover {
-            color: var(--secondary);
-        }
-        
-        h2 a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease;
-        }
-        
-        h2 a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-        
-        h2 a:hover + i.fas.fa-external-link-alt {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        h2 a::after {
-            content: "\f35d";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-size: 0.6em;
-            position: relative;
-            top: -0.5em;
-            margin-left: 0.4em;
-            opacity: 0.7;
-            display: inline-block;
-        }
-
-        h3 a {
-            color: inherit;
-            text-decoration: none;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        h3 a:hover {
-            color: var(--secondary);
-        }
-
-        h3 a::after {
-            content: "\f35d";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-size: 0.6em;
-            position: relative;
-            top: -0.5em;
-            margin-left: 0.4em;
-            opacity: 0.7;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        h3 a:hover::after {
-            opacity: 1;
-            transform: translateX(2px);
-        }
-
-        .special-ayah {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.08) 0%, rgba(44, 77, 219, 0.08) 100%);
-            border-left: 4px solid var(--accent);
-        }
-
-        .ayah-significance {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: rgba(255, 215, 0, 0.08);
-            border-radius: 8px;
-        }
-
-        .ayah-significance h4 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            margin-top: 0;
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        .ayah-significance i {
-            color: var(--accent);
-        }
-
-        .special-ayah .verse .arabic p {
-            font-size: 1.6rem;
-            line-height: 2;
-        }
-
-        @media screen and (max-width: 768px) {
-            .special-ayah .verse .arabic p {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revert Guide — Your Journey in Islam</title>
+  <meta name="description" content="Comprehensive interactive guide for new Muslims covering beliefs, prayer, lifestyle, and community support.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1e3a8a">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #f5f2fa; --card: #fff; --text: #1a1a2e; --text-dim: #5a5a7a; --primary: #1e3a8a; --primary-light: #2d4ba0; --secondary: #4362ed; --accent: #f0c040; --accent-dim: rgba(240,192,64,0.12); --border: rgba(0,0,0,0.06); --radius: 16px; --shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    [data-theme="dark"] { --bg: #0d0d1a; --card: rgba(18,18,35,0.92); --text: #e0e0f0; --text-dim: #8888b0; --primary: #2d4ba0; --primary-light: #3b5de7; --secondary: #5b7fff; --accent: #d4a843; --accent-dim: rgba(212,168,67,0.1); --border: rgba(255,255,255,0.06); --shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); transition: background .3s, color .3s; min-height: 100vh; line-height: 1.7; }
+    .theme-toggle { position: fixed; top: 16px; right: 16px; z-index: 999; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border); background: var(--card); color: var(--accent); cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(12px); transition: all .3s; box-shadow: var(--shadow); }
+    .theme-toggle:hover { transform: scale(1.1); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+    .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: var(--radius); padding: 40px 30px; text-align: center; color: #fff; margin-bottom: 24px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); }
+    .hero h1 { font-size: clamp(1.8rem,5vw,2.8rem); font-weight: 800; position: relative; }
+    .hero p { opacity: .85; font-size: 1.05rem; margin-top: 6px; position: relative; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin-bottom: 20px; backdrop-filter: blur(8px); transition: all .3s; box-shadow: var(--shadow); }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+    .card h2 { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .card h2 i { color: var(--accent); }
+    .card h3 { font-size: 1.05rem; font-weight: 600; color: var(--secondary); margin-bottom: 8px; }
+    .card p { color: var(--text-dim); font-size: .95rem; margin-bottom: 10px; }
+    .card ul { list-style: none; padding: 0; }
+    .card ul li { padding: 5px 0 5px 20px; position: relative; color: var(--text-dim); font-size: .92rem; }
+    .card ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 14px; }
+
+    .pillar-card { background: rgba(67,98,237,0.04); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: all .3s; }
+    .pillar-card:hover { border-color: rgba(67,98,237,0.2); transform: translateY(-3px); }
+    .pillar-card h3 { display: flex; align-items: center; gap: 8px; }
+
+    .expand-btn { width: 100%; background: var(--accent-dim); border: 1px solid transparent; border-radius: 10px; padding: 12px 16px; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text); font-weight: 500; font-size: .9rem; font-family: inherit; transition: all .3s; margin-top: 8px; }
+    .expand-btn:hover { border-color: var(--accent); }
+    .expand-btn .icon { transition: transform .3s; color: var(--accent); }
+    .expand-btn.open .icon { transform: rotate(180deg); }
+    .expand-content { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .4s ease; }
+    .expand-content.open { max-height: 600px; padding: 12px 0; }
+
+    /* Prayer Tracker */
+    .prayer-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 10px; }
+    .prayer-btn { padding: 14px; border-radius: 12px; border: 2px solid var(--border); background: var(--card); cursor: pointer; transition: all .3s; text-align: center; font-family: inherit; }
+    .prayer-btn:hover { border-color: var(--secondary); }
+    .prayer-btn.done { border-color: #4caf50; background: rgba(76,175,80,0.08); }
+    .prayer-btn .name { font-size: .85rem; font-weight: 600; color: var(--text); }
+    .prayer-btn .time { font-size: .75rem; color: var(--text-dim); }
+    .prayer-btn.done .name { color: #4caf50; }
+    .prayer-btn .check { display: none; }
+    .prayer-btn.done .check { display: block; color: #4caf50; font-size: 1.2rem; }
+    .prayer-streak { text-align: center; padding: 12px; font-size: .9rem; color: var(--text-dim); }
+    .prayer-streak strong { color: var(--accent); font-size: 1.1rem; }
+
+    /* Surah Cards */
+    .surah-card { background: rgba(30,58,138,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+    .surah-card .header { font-weight: 600; color: var(--primary); font-size: .95rem; margin-bottom: 8px; }
+    .verse { display: flex; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .verse:last-child { border: none; }
+    .verse .arabic { flex: 1; text-align: right; direction: rtl; font-family: 'Amiri', serif; font-size: 1.2rem; color: var(--text); }
+    .verse .eng { flex: 1; font-size: .88rem; color: var(--text-dim); }
+
+    .ayah-highlight { background: rgba(240,192,64,0.06); border-left: 3px solid var(--accent); padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(20px); transition: all .3s; z-index: 100; box-shadow: var(--shadow); }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+
+    footer { text-align: center; padding: 24px; color: var(--text-dim); font-size: .85rem; border-top: 1px solid var(--border); margin-top: 40px; }
+
+    @media (max-width: 768px) { .container { padding: 12px; } .card { padding: 20px; } }
+  </style>
 </head>
 <body>
-    <!-- Theme Switch Button -->
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider"></div>
-        </label>
+<button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+<button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+<div class="container">
+  <div class="hero"><h1>🕌 Revert Guide</h1><p>Your companion on the journey of faith — resources, guidance, and community for new Muslims</p></div>
+
+  <!-- PRAYER TRACKER -->
+  <div class="card">
+    <h2><i class="fas fa-praying-hands"></i> Daily Prayer Tracker</h2>
+    <p>Track your 5 daily prayers — tap to mark as completed.</p>
+    <div class="prayer-grid" id="prayerGrid"></div>
+    <div class="prayer-streak">🔥 Streak: <strong id="prayerStreak">0</strong> days — <span id="prayerMsg">Start tracking your prayers!</span></div>
+  </div>
+
+  <!-- SHAHADA -->
+  <div class="card">
+    <h2><i class="fas fa-star"></i> Taking Your Shahada</h2>
+    <p>The Shahada (testimony of faith) is the entry point into Islam. It must be said sincerely, with understanding and conviction.</p>
+    <div style="background:var(--accent-dim);border-radius:12px;padding:20px;margin:12px 0;text-align:center">
+      <p style="font-family:'Amiri',serif;font-size:1.6rem;color:var(--primary);direction:rtl;margin-bottom:8px">أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ</p>
+      <p style="font-style:italic;color:var(--text-dim);font-size:.9rem">Ash-hadu an la ilaha illallah, wa ash-hadu anna Muhammadan rasulullah</p>
+      <p style="font-weight:600;margin-top:8px">"I bear witness that there is no god but Allah, and I bear witness that Muhammad is His messenger."</p>
+    </div>
+    <h3>What it means:</h3>
+    <ul>
+      <li><b>La ilaha illallah</b> — Nothing deserves worship except Allah alone</li>
+      <li><b>Muhammadan rasulullah</b> — Muhammad ﷺ is Allah's final messenger</li>
+    </ul>
+    <div class="ayah-highlight"><p>You can say the Shahada anywhere, anytime — alone or with witnesses. What matters is the sincerity in your heart. Visit your local mosque to make it official, but the moment you believe sincerely, you are Muslim.</p></div>
+  </div>
+
+  <!-- WELCOME -->
+  <div class="card">
+    <h2><i class="fas fa-star"></i> Welcome to Islam</h2>
+    <p>Congratulations on your journey! The word "revert" reflects the belief that everyone is born in a natural state of submission to God. Embracing Islam is returning to that fitrah (natural disposition).</p>
+    <p>This guide provides essential information, resources, and support. Remember — go at your own pace. Consistency matters more than perfection.</p>
+  </div>
+
+  <!-- BELIEFS -->
+  <div class="card">
+    <h2><i class="fas fa-mosque"></i> The Essentials</h2>
+    <div class="grid-2">
+      <div class="pillar-card"><h3>🕌 Six Articles of Faith</h3><p>Belief in Allah, Angels, Divine Books, Prophets, Day of Judgment, Divine Decree.</p></div>
+      <div class="pillar-card"><h3>📿 Five Pillars</h3><p>Shahada (testimony), Salah (prayer), Zakat (charity), Sawm (fasting), Hajj (pilgrimage).</p></div>
     </div>
 
-    <header>
-        <div class="container">
-        <h1>Islamic Revert Guide</h1>
-            <p>Resources and guidance for new Muslims and those interested in Islam</p>
-        </div>
-    </header>
+    <button class="expand-btn" id="pBtn1"><span>📖 Learn about the Five Pillars</span><span class="icon"><i class="fas fa-chevron-down"></i></span></button>
+    <div class="expand-content" id="pContent1">
+      <div class="grid-2" style="margin-top:8px;">
+        <div class="pillar-card"><h3>Shahada</h3><p>"There is no god but Allah, Muhammad is His messenger." The declaration that makes one Muslim.</p></div>
+        <div class="pillar-card"><h3>Salah</h3><p>Five daily prayers: Fajr (dawn), Dhuhr (noon), Asr (afternoon), Maghrib (sunset), Isha (night).</p></div>
+        <div class="pillar-card"><h3>Zakat</h3><p>Annual charity of 2.5% of savings — purifies wealth and supports those in need.</p></div>
+        <div class="pillar-card"><h3>Sawm</h3><p>Fasting during Ramadan from dawn to sunset — teaches self-discipline and empathy.</p></div>
+        <div class="pillar-card"><h3>Hajj</h3><p>Pilgrimage to Mecca once in a lifetime for those who are physically and financially able.</p></div>
+      </div>
+    </div>
+  </div>
 
-    <div class="container">
-        <section id="intro" class="card">
-            <h2><i class="fas fa-star"></i> Welcome to Islam</h2>
-            <p>Congratulations on your journey to Islam! The word "<span class="highlight">revert</span>" is often used instead of "convert" because in Islam, it's believed that everyone is born in a natural state of submission to God (Islam), and later life circumstances lead people away from this path. So when someone embraces Islam, they're actually "reverting" back to their natural state.</p>
-            <p>This guide aims to provide essential information, resources, and support for your journey as a new Muslim. Remember that your journey is personal, and it's okay to progress at your own pace.</p>
-        </section>
+  <!-- PRAYER GUIDE -->
+  <div class="card">
+    <h2><i class="fas fa-pray"></i> How to Pray (Salah)</h2>
+    <div class="grid-2">
+      <div><h3>Wudu (Ablution)</h3><ul><li>Intention (niyyah)</li><li>Wash hands 3x</li><li>Rinse mouth & nose 3x</li><li>Wash face 3x</li><li>Wash arms to elbows 3x</li><li>Wipe head & ears once</li><li>Wash feet to ankles 3x</li></ul></div>
+      <div><h3>Prayer Steps</h3><ul><li>Stand facing Qibla</li><li>Say "Allahu Akbar"</li><li>Recite Al-Fatiha + short surah</li><li>Bow (Ruku)</li><li>Rise</li><li>Prostrate (Sujood) 2x</li><li>Complete rak'ahs</li><li>Tashahhud & Salam</li></ul></div>
+    </div>
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="pillar-card"><h3>Prayer Times</h3><ul><li><strong>Fajr:</strong> Dawn</li><li><strong>Dhuhr:</strong> Midday</li><li><strong>Asr:</strong> Afternoon</li><li><strong>Maghrib:</strong> Sunset</li><li><strong>Isha:</strong> Night</li></ul></div>
+      <div class="pillar-card"><h3>💡 Tips</h3><ul><li>Start with one prayer at a time</li><li>Use transliteration</li><li>Pray with a friend</li><li>Be patient with yourself</li></ul></div>
+    </div>
+  </div>
 
-        <section id="basics" class="card">
-            <h2><i class="fas fa-mosque"></i> The Essential Beliefs</h2>
-            <p>Islam is built upon six fundamental beliefs and five practical pillars:</p>
-            
-            <h3>Six Articles of Faith:</h3>
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3><i class="fas fa-star-and-crescent"></i> Belief in Allah</h3>
-                    <p>Belief in the One God, known as Allah in Arabic, who is unique, incomparable, and the only one worthy of worship.</p>
-                </div>
-                <div class="card flex-item">
-                    <h3><i class="fas fa-feather-alt"></i> Belief in Angels</h3>
-                    <p>Belief in Allah's angels, created from light, who never disobey Allah and carry out His commands.</p>
-                </div>
-                <div class="card flex-item">
-                    <h3><i class="fas fa-book"></i> Belief in Divine Books</h3>
-                    <p>Belief in Allah's books, including the Quran, Torah, Psalms, and Gospel in their original form.</p>
-                </div>
-                <div class="card flex-item">
-                    <h3><i class="fas fa-user"></i> Belief in Prophets</h3>
-                    <p>Belief in Allah's messengers, including Adam, Abraham, Moses, Jesus, and Muhammad (peace be upon them all).</p>
-                </div>
-                <div class="card flex-item">
-                    <h3><i class="fas fa-calendar-day"></i> Belief in the Day of Judgment</h3>
-                    <p>Belief in the Day of Judgment, when everyone will be held accountable for their actions.</p>
-                </div>
-                <div class="card flex-item">
-                    <h3><i class="fas fa-balance-scale"></i> Belief in Divine Decree</h3>
-                    <p>Belief in Allah's divine decree, that nothing happens without His knowledge and permission.</p>
-                </div>
-            </div>
+  <!-- GHUSL -->
+  <div class="card">
+    <h2><i class="fas fa-tint"></i> Ghusl (Ritual Bath)</h2>
+    <p>Ghusl is a full-body ritual purification required in specific situations. As a new Muslim, you'll need it after certain impurities.</p>
+    <div class="grid-2">
+      <div>
+        <h3>When is Ghusl required?</h3>
+        <ul>
+          <li>After marital relations</li>
+          <li>After nocturnal emission (wet dream)</li>
+          <li>At the end of menstruation (women)</li>
+          <li>At the end of postpartum bleeding (women)</li>
+          <li>Before converting to Islam (recommended)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>How to perform Ghusl:</h3>
+        <ul>
+          <li>Make intention (niyyah) in your heart</li>
+          <li>Say "Bismillah" and wash hands 3x</li>
+          <li>Wash private parts</li>
+          <li>Perform Wudu (ablution)</li>
+          <li>Pour water over head 3x, ensuring it reaches roots of hair</li>
+          <li>Wash right side of body 3x, then left side 3x</li>
+          <li>Wash feet last</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ayah-highlight"><p><b>Important:</b> If water is unavailable or harmful to health, Tayammum (dry ablution) can substitute. Strike clean earth with your hands and wipe your face and arms.</p></div>
+  </div>
 
-            <h3>Five Pillars of Islam:</h3>
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3><i class="fas fa-hands-praying"></i> Shahada</h3>
-                    <p>The testimony of faith: "There is no god but Allah, and Muhammad is His messenger."</p>
-                    <div class="expandable-header">
-                        <span>Learn More</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="expandable-content">
-                        <p>The Shahada (testimony of faith) is the first pillar of Islam and the gateway to becoming Muslim. When you declare this with sincere belief, you become a Muslim. In Arabic, it's pronounced: "Ash-hadu an la ilaha illa Allah, wa ash-hadu anna Muhammadan Rasul Allah."</p>
-                    </div>
-                </div>
-                <div class="card flex-item">
-                    <h3><i class="fas fa-praying-hands"></i> Salah</h3>
-                    <p>The five daily prayers that establish a direct connection with Allah.</p>
-                    <div class="expandable-header">
-                        <span>Learn More</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="expandable-content">
-                        <p>Muslims pray five times daily: Fajr (dawn), Dhuhr (noon), Asr (afternoon), Maghrib (sunset), and Isha (night). Prayer involves physical movements and recitations, creating a comprehensive connection with Allah. Before praying, Muslims perform wudu (ablution) to purify themselves.</p>
-                    </div>
-                </div>
-                <div class="card flex-item">
-                    <h3><i class="fas fa-hand-holding-dollar"></i> Zakat</h3>
-                    <p>Annual charity of 2.5% of one's wealth, purifying wealth and helping those in need.</p>
-                    <div class="expandable-header">
-                        <span>Learn More</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="expandable-content">
-                        <p>Zakat is an annual obligation for Muslims who possess wealth above a specific threshold (nisab). It's calculated at 2.5% of eligible wealth after one lunar year of ownership. Zakat helps purify wealth and supports the poor, needy, and other specified categories of recipients.</p>
-                    </div>
-                </div>
-                <div class="card flex-item">
-                    <h3><i class="fas fa-moon"></i> Sawm</h3>
-                    <p>Fasting during the month of Ramadan, abstaining from food, drink, and physical desires from dawn to sunset.</p>
-                    <div class="expandable-header">
-                        <span>Learn More</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="expandable-content">
-                        <p>During Ramadan, the ninth month of the Islamic calendar, Muslims fast from dawn until sunset. Fasting means abstaining from food, drink, smoking, and marital relations during daylight hours. It teaches self-discipline, empathy for the less fortunate, and spiritual awareness. Those who are sick, traveling, elderly, pregnant, nursing, or menstruating are exempted but may make up the days later or give charity instead.</p>
-                    </div>
-                </div>
-                <div class="card flex-item">
-                    <h3><i class="fas fa-kaaba"></i> Hajj</h3>
-                    <p>Pilgrimage to Mecca, obligatory once in a lifetime for those who are physically and financially able.</p>
-                    <div class="expandable-header">
-                        <span>Learn More</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="expandable-content">
-                        <p>Hajj is the annual pilgrimage to Mecca, Saudi Arabia, during the Islamic month of Dhul Hijjah. It's obligatory once in a lifetime for Muslims who are physically and financially able. Hajj commemorates the experiences of Prophet Ibrahim and his family, and represents unity, equality, and submission to Allah.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- ESSENTIAL SURAHS -->
+  <div class="card">
+    <h2><i class="fas fa-quran"></i> Essential Surahs for Prayer</h2>
+    <p>Learn these short surahs — they are frequently recited in daily prayers.</p>
 
-        <section id="prayer" class="card">
-            <h2><i class="fas fa-praying-hands"></i> <a href="https://mhobgstudio.github.io/Salah-app/" target="_blank">Learning How to Pray</a></h2>
-            <p>Prayer (Salah) is essential in Islam and performed five times daily. Here's a simplified guide to help you get started:</p>
-            
-            <h3>Steps to Perform Wudu (Ablution)</h3>
-            <ol>
-                <li>Make the intention (niyyah) to perform wudu</li>
-                <li>Say "Bismillah" (In the name of Allah)</li>
-                <li>Wash hands up to the wrists three times</li>
-                <li>Rinse mouth and nose three times</li>
-                <li>Wash face from forehead to chin and ear to ear three times</li>
-                <li>Wash arms up to the elbows three times (right arm first)</li>
-                <li>Wipe the top of the head with wet hands once</li>
-                <li>Wipe over and behind the ears with wet fingers once</li>
-                <li>Wash feet up to the ankles three times (right foot first)</li>
-            </ol>
-
-            <h3>Basic Prayer Steps</h3>
-            <ol>
-                <li>Stand facing the Qibla (direction of the Kaaba in Mecca)</li>
-                <li>Make the intention for the specific prayer</li>
-                <li>Raise hands to shoulders or ears saying "Allahu Akbar" (Allah is Greatest)</li>
-                <li>Place right hand over left on chest</li>
-                <li>Recite the opening chapter of the Quran (Surah Al-Fatiha) and another short passage</li>
-                <li>Bow (Ruku) saying "Allahu Akbar"</li>
-                <li>Rise saying "Sami'a Allahu liman hamidah" (Allah hears those who praise Him)</li>
-                <li>Prostrate (Sujood) saying "Allahu Akbar"</li>
-                <li>Sit between prostrations saying "Allahu Akbar"</li>
-                <li>Prostrate again saying "Allahu Akbar"</li>
-                <li>Complete the remaining units (rak'ahs) similarly</li>
-                <li>At the end, recite the tashahhud and salutations to the Prophet</li>
-                <li>Conclude by turning head right and left saying "Assalamu alaikum wa rahmatullah"</li>
-            </ol>
-            
-            <p>It's normal to find prayer challenging at first. Consider using a prayer guide or app, and remember that improvement comes with practice. Learning from another Muslim in person can be extremely helpful.</p>
-            
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3>Prayer Times</h3>
-                    <ul>
-                        <li><strong>Fajr:</strong> Dawn, before sunrise</li>
-                        <li><strong>Dhuhr:</strong> Midday, after the sun passes its zenith</li>
-                        <li><strong>Asr:</strong> Afternoon</li>
-                        <li><strong>Maghrib:</strong> Just after sunset</li>
-                        <li><strong>Isha:</strong> Night, after twilight disappears</li>
-                    </ul>
-                    <p>Prayer times vary by location and season. Use a prayer time app, mosque schedule, or website to find accurate times for your area.</p>
-                </div>
-                <div class="card flex-item">
-                    <h3>Tips for New Muslims</h3>
-                    <ul>
-                        <li>Start with learning one prayer at a time</li>
-                        <li>Use transliteration until you memorize the Arabic</li>
-                        <li>Download a prayer app with step-by-step guidance</li>
-                        <li>Practice with another Muslim if possible</li>
-                        <li>Be patient with yourself as you learn</li>
-                        <li>Focus on the meaning of what you're saying</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="lifestyle" class="card">
-            <h2><i class="fas fa-hand-point-right"></i> Essential Lifestyle Changes</h2>
-            
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3><i class="fas fa-utensils"></i> Halal Food</h3>
-                    <p>Muslims follow a dietary code called halal (permissible). This includes:</p>
-                    <ul>
-                        <li>Avoiding pork and pork-derived products</li>
-                        <li>Eating only meat that has been slaughtered according to Islamic guidelines</li>
-                        <li>Avoiding alcohol and intoxicants</li>
-                        <li>Avoiding food containing animal-derived ingredients from non-halal sources</li>
-                    </ul>
-                    <p>Look for "halal certified" labels or eat vegetarian/seafood when unsure.</p>
-                </div>
-                
-                <div class="card flex-item">
-                    <h3><i class="fas fa-tshirt"></i> Islamic Dress</h3>
-                    <p>Islamic clothing emphasizes modesty:</p>
-                    <ul>
-                        <li><strong>For women:</strong> Covering the body except for face and hands, with loose-fitting clothes that don't reveal body shape</li>
-                        <li><strong>For men:</strong> Covering from navel to knee at minimum, with modest clothing</li>
-                    </ul>
-                    <p>Many women choose to wear the hijab (headscarf) as part of their religious practice. Adopt Islamic dress at a pace that feels comfortable to you while respecting the principles.</p>
-                </div>
-            </div>
-            
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3><i class="fas fa-people-arrows"></i> Social Interactions</h3>
-                    <p>Islam encourages respectful interactions:</p>
-                    <ul>
-                        <li>Maintaining modesty in mixed-gender settings</li>
-                        <li>Avoiding physical contact with non-mahram (eligible for marriage) individuals of the opposite gender</li>
-                        <li>Being mindful about attending events with alcohol or inappropriate activities</li>
-                    </ul>
-                    <p>Finding balance in maintaining previous relationships while adhering to Islamic principles can be challenging but rewarding.</p>
-                </div>
-                
-                <div class="card flex-item">
-                    <h3><i class="fas fa-heart"></i> Character Development</h3>
-                    <p>Islam emphasizes developing good character:</p>
-                    <ul>
-                        <li>Truthfulness and honesty</li>
-                        <li>Patience and perseverance</li>
-                        <li>Kindness and compassion</li>
-                        <li>Humility and gratitude</li>
-                        <li>Controlling anger and forgiving others</li>
-                    </ul>
-                    <p>Prophet Muhammad (peace be upon him) said: "I was sent to perfect good character." Working on character development is an essential part of being a Muslim.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="community" class="card">
-            <h2><i class="fas fa-hands-helping"></i> Finding Community Support</h2>
-            <p>Building connections with other Muslims is crucial for your journey:</p>
-            
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3><i class="fas fa-mosque"></i> Connecting with a Mosque</h3>
-                    <p>Visiting your local mosque can provide spiritual growth and community:</p>
-                    <ul>
-                        <li>Attend Friday prayers (Jumu'ah)</li>
-                        <li>Participate in educational programs</li>
-                        <li>Join community events</li>
-                        <li>Seek guidance from the imam</li>
-                    </ul>
-                    <p>Most mosques welcome newcomers and have resources specifically for new Muslims.</p>
-                </div>
-                
-                <div class="card flex-item">
-                    <h3><i class="fas fa-user-friends"></i> Finding a Mentor</h3>
-                    <p>A knowledgeable mentor can provide personal guidance:</p>
-                    <ul>
-                        <li>Ask at your local mosque for mentorship programs</li>
-                        <li>Connect with revert support organizations</li>
-                        <li>Look for community members who demonstrate good character</li>
-                        <li>Consider online mentorship if local options are limited</li>
-                    </ul>
-                    <p>Choose a mentor who is patient, knowledgeable, and respects your journey.</p>
-                </div>
-            </div>
-            
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3><i class="fas fa-users"></i> Navigating the Muslim Community</h3>
-                    <p>The Muslim community is diverse with various cultural practices:</p>
-                    <ul>
-                        <li>Distinguish between religious requirements and cultural practices</li>
-                        <li>Seek knowledge from reliable sources</li>
-                        <li>Be patient with different perspectives</li>
-                        <li>Focus on core principles rather than differences</li>
-                    </ul>
-                    <p>Remember that Muslims are human and may not always represent Islam perfectly. Focus on the teachings rather than individuals' actions.</p>
-                </div>
-                
-                <div class="card flex-item">
-                    <h3><i class="fas fa-home"></i> Family Relations</h3>
-                    <p>Navigating relationships with non-Muslim family can be challenging:</p>
-                    <ul>
-                        <li>Maintain good relations with family members</li>
-                        <li>Demonstrate Islam through good character</li>
-                        <li>Be patient with misunderstandings</li>
-                        <li>Share information gradually without overwhelming</li>
-                        <li>Respect differing beliefs while maintaining your own</li>
-                    </ul>
-                    <p>Prophet Muhammad (peace be upon him) emphasized maintaining family ties, even with family members of different faiths.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="learning" class="card">
-            <h2><i class="fas fa-book-reader"></i> Continuing Your Islamic Education</h2>
-            <p>Learning is a lifelong journey in Islam. Here are some key areas to focus on:</p>
-            
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3><i class="fas fa-quran"></i> Quran Study</h3>
-                    <p>The Quran is Allah's direct word and the primary source of Islamic teachings:</p>
-                    <ul>
-                        <li>Start with an accessible translation</li>
-                        <li>Learn to recite in Arabic gradually</li>
-                        <li>Join a Quran study circle</li>
-                        <li>Use apps with recitation and translation</li>
-                    </ul>
-                    <p>Even reading a small portion daily can have a profound impact on your spiritual growth.</p>
-                </div>
-                
-                <div class="card flex-item">
-                    <h3><i class="fas fa-user"></i> Prophet's Life (Seerah)</h3>
-                    <p>Learning about Prophet Muhammad's life provides practical examples of Islamic teachings:</p>
-                    <ul>
-                        <li>Read beginner-friendly biographies</li>
-                        <li>Learn about his character and interactions</li>
-                        <li>Study how he implemented Islamic teachings</li>
-                        <li>Understand the historical context of Islam's development</li>
-                    </ul>
-                    <p>The Prophet's life serves as the best model for implementing Islamic principles.</p>
-                </div>
-            </div>
-            
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3><i class="fas fa-language"></i> <a href="https://mhobgstudio.github.io/Quranic-Words-App/" target="_blank">Arabic Language</a></h3>
-                    <p>Learning Arabic enhances your connection with Islamic texts:</p>
-                    <ul>
-                        <li>Start with the Arabic alphabet</li>
-                        <li>Learn common Islamic phrases</li>
-                        <li>Study Quranic vocabulary</li>
-                        <li>Consider online courses or local classes</li>
-                    </ul>
-                    <p>Even basic Arabic knowledge can significantly enhance your understanding of prayers and the Quran.</p>
-                </div>
-                
-                <div class="card flex-item">
-                    <h3><i class="fas fa-balance-scale"></i> <a href="https://mhobgstudio.github.io/Sharia-Law/" target="_blank">Islamic Ethics and Laws</a></h3>
-                    <p>Understanding Islamic guidance for daily life situations:</p>
-                    <ul>
-                        <li>Learn the principles behind Islamic rulings</li>
-                        <li>Study fiqh (Islamic jurisprudence) basics</li>
-                        <li>Understand differences of opinion on various matters</li>
-                        <li>Apply ethical teachings in modern contexts</li>
-                    </ul>
-                    <p>Focus on understanding the wisdom behind Islamic guidance rather than just rules.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="challenges" class="card">
-            <h2><i class="fas fa-mountain"></i> Common Challenges and Solutions</h2>
-            <p>Many new Muslims face similar challenges. Here are some common ones with potential solutions:</p>
-            
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3><i class="fas fa-pray"></i> Difficulty with Prayer</h3>
-                    <p>Many new Muslims struggle with prayer routines:</p>
-                    <ul>
-                        <li>Start with one or two prayers daily and gradually increase</li>
-                        <li>Use prayer apps with notifications</li>
-                        <li>Prepare prayer cheat sheets until memorized</li>
-                        <li>Find a prayer partner for accountability</li>
-                    </ul>
-                    <p>Remember that consistency is more important than perfection.</p>
-                </div>
-                
-                <div class="card flex-item">
-                    <h3><i class="fas fa-user-friends"></i> Family Opposition</h3>
-                    <p>Family resistance to conversion is common:</p>
-                    <ul>
-                        <li>Demonstrate improved character rather than preaching</li>
-                        <li>Maintain relationships and fulfill family duties</li>
-                        <li>Seek compromise on cultural practices where possible</li>
-                        <li>Find support from other Muslims facing similar situations</li>
-                    </ul>
-                    <p>Time, patience, and good conduct often soften initial opposition.</p>
-                </div>
-            </div>
-            
-            <div class="flex-grid">
-                <div class="card flex-item">
-                    <h3><i class="fas fa-heart-broken"></i> Isolation and Loneliness</h3>
-                    <p>Feeling disconnected is a common experience:</p>
-                    <ul>
-                        <li>Join activities at your local mosque</li>
-                        <li>Connect with revert support groups</li>
-                        <li>Maintain appropriate relations with previous friends</li>
-                        <li>Volunteer for Islamic organizations</li>
-                        <li>Consider online Muslim communities</li>
-                    </ul>
-                    <p>Building a new social circle takes time—be patient and proactive.</p>
-                </div>
-                
-                <div class="card flex-item">
-                    <h3><i class="fas fa-question-circle"></i> Information Overload</h3>
-                    <p>Feeling overwhelmed by new information:</p>
-                    <ul>
-                        <li>Focus on essentials first (beliefs and basic practices)</li>
-                        <li>Take a structured approach to learning</li>
-                        <li>Set realistic goals for implementing changes</li>
-                        <li>Distinguish between obligations and recommendations</li>
-                        <li>Remember that Islam is meant to be implemented gradually</li>
-                    </ul>
-                    <p>The Prophet Muhammad (peace be upon him) established Islam over 23 years, not overnight.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="resources" class="card">
-            <h2><i class="fas fa-link"></i> Learning Resources</h2>
-            <div class="flex-grid">
-                <section class="card flex-item">
-                    <h3>Comprehensive Revert Guides & Organizations</h3>
-                    <ul class="resource-list" id="resource-list">
-                    </ul>
-                </section>
-                <section class="card flex-item">
-                    <h3>Recommended Books for New Muslims</h3>
-                    <ul>
-                        <li>The Quran: A New Translation by M.A.S. Abdel Haleem</li>
-                        <li>The Clear Quran translated by Dr. Mustafa Khattab</li>
-                        <li>The New Muslim Guide by Fahd Salem Bahammam</li>
-                        <li>The New Muslim's Field Guide by Theresa Corbin and Kaighla Um Dayo</li>
-                        <li>Welcome to Islam: A Step-by-Step Guide for New Muslims by Mustafa Umar</li>
-                        <li>How to Pray: A Step-by-Step Guide to Prayer in Islam by Mustafa Umar</li>
-                        <li>Reclaim Your Heart by Yasmin Mogahed</li>
-                        <li>Being Muslim: A Practical Guide by Asad Tarsin</li>
-                    </ul>
-                </section>
-            </div>
-            <a class="cta-button" href="#quran-section">Explore Resources</a>
-        </section>
-        
-        <section id="quran-section" class="card">
-            <h2><i class="fas fa-quran"></i> Essential Quranic Surahs</h2>
-            <p>These are some of the most important chapters (surahs) from the Quran that new Muslims often learn first. They include the opening chapter of the Quran (Al-Fatiha) and three short chapters from the end of the Quran that are frequently recited in daily prayers.</p>
-            
-            <div class="quran-container">
-                <!-- Surah Al-Fatiha -->
-                <div class="surah-card">
-                    <div class="surah-header">
-                        <h3>Surah Al-Fatiha (The Opening) - Surah 1</h3>
-                        <p>7 verses - The most important surah in the Quran, recited in every prayer</p>
-                    </div>
-                    
-                    <div class="verse-container">
-                        <div class="verse" data-verse="1">
-                            <div class="english">
-                                <p class="translation">In the name of Allah, the Most Gracious, the Most Merciful</p>
-                                <p class="transliteration">Bismillahi r-rahmani r-raheem</p>
-                            </div>
-                            <div class="arabic">
-                                <p>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="2">
-                            <div class="english">
-                                <p class="translation">All praise is for Allah—Lord of all worlds</p>
-                                <p class="transliteration">Al hamdu lillahi rabbil 'alamin</p>
-                            </div>
-                            <div class="arabic">
-                                <p>الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="3">
-                            <div class="english">
-                                <p class="translation">The Most Compassionate, Most Merciful</p>
-                                <p class="transliteration">Ar-rahmani r-raheem</p>
-                            </div>
-                            <div class="arabic">
-                                <p>الرَّحْمَٰنِ الرَّحِيمِ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="4">
-                            <div class="english">
-                                <p class="translation">Master of the Day of Judgment</p>
-                                <p class="transliteration">Maliki yawmi d-deen</p>
-                            </div>
-                            <div class="arabic">
-                                <p>مَالِكِ يَوْمِ الدِّينِ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="5">
-                            <div class="english">
-                                <p class="translation">You ˹alone˺ we worship and You ˹alone˺ we ask for help</p>
-                                <p class="transliteration">Iyyaka na'budu wa iyyaka nasta'een</p>
-                            </div>
-                            <div class="arabic">
-                                <p>إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="6">
-                            <div class="english">
-                                <p class="translation">Guide us along the Straight Path</p>
-                                <p class="transliteration">Ihdina s-sirata l-mustaqeem</p>
-                            </div>
-                            <div class="arabic">
-                                <p>اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="7">
-                            <div class="english">
-                                <p class="translation">The Path of those You have blessed—not those You are displeased with, or those who are astray</p>
-                                <p class="transliteration">Sirata l-latheena an'amta 'alayhim, ghayri l-maghdubi 'alayhim wa la d-dalleen</p>
-                            </div>
-                            <div class="arabic">
-                                <p>صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Surah Al-Ikhlas -->
-                <div class="surah-card">
-                    <div class="surah-header">
-                        <h3>Surah Al-Ikhlas (Sincerity) - Surah 112</h3>
-                        <p>4 verses - Describes the oneness of Allah; equal to one-third of the Quran in reward</p>
-                    </div>
-                    
-                    <div class="verse-container">
-                        <div class="verse" data-verse="1">
-                            <div class="english">
-                                <p class="translation">Say, "He is Allah, [who is] One"</p>
-                                <p class="transliteration">Qul huwa Allahu ahad</p>
-                            </div>
-                            <div class="arabic">
-                                <p>قُلْ هُوَ اللَّهُ أَحَدٌ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="2">
-                            <div class="english">
-                                <p class="translation">Allah is the Self-Sufficient</p>
-                                <p class="transliteration">Allahu s-samad</p>
-                            </div>
-                            <div class="arabic">
-                                <p>اللَّهُ الصَّمَدُ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="3">
-                            <div class="english">
-                                <p class="translation">He neither begets nor is born</p>
-                                <p class="transliteration">Lam yalid wa lam yulad</p>
-                            </div>
-                            <div class="arabic">
-                                <p>لَمْ يَلِدْ وَلَمْ يُولَدْ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="4">
-                            <div class="english">
-                                <p class="translation">Nor is there to Him any equivalent</p>
-                                <p class="transliteration">Wa lam yakun lahu kufuwan ahad</p>
-                            </div>
-                            <div class="arabic">
-                                <p>وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Surah Al-Falaq -->
-                <div class="surah-card">
-                    <div class="surah-header">
-                        <h3>Surah Al-Falaq (The Daybreak) - Surah 113</h3>
-                        <p>5 verses - A prayer seeking protection from Allah</p>
-                    </div>
-                    
-                    <div class="verse-container">
-                        <div class="verse" data-verse="1">
-                            <div class="english">
-                                <p class="translation">Say, "I seek refuge in the Lord of daybreak"</p>
-                                <p class="transliteration">Qul a'udhu bi rabbi l-falaq</p>
-                            </div>
-                            <div class="arabic">
-                                <p>قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="2">
-                            <div class="english">
-                                <p class="translation">From the evil of that which He created</p>
-                                <p class="transliteration">Min sharri ma khalaq</p>
-                            </div>
-                            <div class="arabic">
-                                <p>مِن شَرِّ مَا خَلَقَ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="3">
-                            <div class="english">
-                                <p class="translation">And from the evil of darkness when it settles</p>
-                                <p class="transliteration">Wa min sharri ghasiqin idha waqab</p>
-                            </div>
-                            <div class="arabic">
-                                <p>وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="4">
-                            <div class="english">
-                                <p class="translation">And from the evil of the blowers in knots</p>
-                                <p class="transliteration">Wa min sharri n-naffathati fi l-'uqad</p>
-                            </div>
-                            <div class="arabic">
-                                <p>وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="5">
-                            <div class="english">
-                                <p class="translation">And from the evil of an envier when he envies</p>
-                                <p class="transliteration">Wa min sharri hasidin idha hasad</p>
-                            </div>
-                            <div class="arabic">
-                                <p>وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Surah An-Nas -->
-                <div class="surah-card">
-                    <div class="surah-header">
-                        <h3>Surah An-Nas (Mankind) - Surah 114</h3>
-                        <p>6 verses - A prayer seeking Allah's protection from evil whispers</p>
-                    </div>
-                    
-                    <div class="verse-container">
-                        <div class="verse" data-verse="1">
-                            <div class="english">
-                                <p class="translation">Say, "I seek refuge in the Lord of mankind"</p>
-                                <p class="transliteration">Qul a'udhu bi rabbi n-nas</p>
-                            </div>
-                            <div class="arabic">
-                                <p>قُلْ أَعُوذُ بِرَبِّ النَّاسِ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="2">
-                            <div class="english">
-                                <p class="translation">The Sovereign of mankind</p>
-                                <p class="transliteration">Maliki n-nas</p>
-                            </div>
-                            <div class="arabic">
-                                <p>مَلِكِ النَّاسِ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="3">
-                            <div class="english">
-                                <p class="translation">The God of mankind</p>
-                                <p class="transliteration">Ilahi n-nas</p>
-                            </div>
-                            <div class="arabic">
-                                <p>إِلَٰهِ النَّاسِ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="4">
-                            <div class="english">
-                                <p class="translation">From the evil of the retreating whisperer</p>
-                                <p class="transliteration">Min sharri l-waswasi l-khannas</p>
-                            </div>
-                            <div class="arabic">
-                                <p>مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="5">
-                            <div class="english">
-                                <p class="translation">Who whispers [evil] into the breasts of mankind</p>
-                                <p class="transliteration">Alladhi yuwaswisu fi suduri n-nas</p>
-                            </div>
-                            <div class="arabic">
-                                <p>الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ</p>
-                            </div>
-                        </div>
-                        
-                        <div class="verse" data-verse="6">
-                            <div class="english">
-                                <p class="translation">From among the jinn and mankind</p>
-                                <p class="transliteration">Mina l-jinnati wa n-nas</p>
-                            </div>
-                            <div class="arabic">
-                                <p>مِنَ الْجِنَّةِ وَالنَّاسِ</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ayatul Kursi -->
-                <div class="surah-card special-ayah">
-                    <div class="surah-header">
-                        <h3>Ayatul Kursi (The Verse of the Throne)</h3>
-                        <p>From Surah Al-Baqarah (2:255) - One of the most powerful verses in the Quran, offering protection and describing Allah's attributes</p>
-                    </div>
-                    
-                    <div class="verse-container">
-                        <div class="verse" data-verse="255">
-                            <div class="english">
-                                <p class="translation">Allah! There is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth. Who is it that can intercede with Him except by His permission? He knows what is before them and what will be after them, and they encompass not a thing of His knowledge except for what He wills. His Kursi extends over the heavens and the earth, and their preservation tires Him not. And He is the Most High, the Most Great.</p>
-                                <p class="transliteration">Allahu la ilaha illa huwa, al-Hayyu al-Qayyum. La ta'khudhuhu sinatun wa la nawm. Lahu ma fis-samawati wa ma fil-ard. Man dhal-ladhi yashfa'u 'indahu illa bi-idhnih. Ya'lamu ma bayna aydihim wa ma khalfahum, wa la yuhituna bi-shay'im-min 'ilmihi illa bima sha'. Wasi'a kursiyyuhus-samawati wal-ard, wa la ya'uduhu hifzuhuma, wa huwal-'Aliyyul-'Azim.</p>
-                            </div>
-                            <div class="arabic">
-                                <p>اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="ayah-significance">
-                <h4><i class="fas fa-shield-alt"></i> Significance</h4>
-                <p>The Prophet Muhammad ﷺ said about this verse:</p>
-                <ul>
-                    <li>"Whoever recites Ayatul Kursi after each obligatory prayer, nothing will prevent them from entering Paradise except death." (An-Nasa'i)</li>
-                    <li>"When you go to bed, recite Ayatul Kursi, for there will remain over you a protection from Allah, and no devil will approach you until morning." (Bukhari)</li>
-                </ul>
-            </div>
-            
-            <div class="quran-tips">
-                <h3><i class="fas fa-lightbulb"></i> Tips for Recitation</h3>
-                <ul>
-                    <li>Start with small portions - even one verse at a time</li>
-                    <li>Listen to audio recitations to learn proper pronunciation</li>
-                    <li>Practice daily, even if it's just for a few minutes</li>
-                    <li>Join a Quran study circle if possible</li>
-                    <li>Download a Quran app with audio recitation features</li>
-                </ul>
-                <p>Consider learning Al-Fatiha first, as it's required in every prayer. Then progress to the shorter surahs at the end of the Quran.</p>
-            </div>
-            
-            <a class="cta-button" href="#resources">Back to Resources</a>
-        </section>
+    <div class="surah-card">
+      <div class="header">Surah Al-Fatiha (The Opening) — 7 verses</div>
+      <div class="verse"><div class="eng"><p>In the name of Allah, the Most Gracious, the Most Merciful</p><p style="font-style:italic;font-size:.8rem;color:var(--text-dim);">Bismillahi r-rahmani r-raheem</p></div><div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div></div>
+      <div class="verse"><div class="eng"><p>All praise is for Allah — Lord of all worlds</p><p style="font-style:italic;font-size:.8rem;color:var(--text-dim);">Al hamdu lillahi rabbil 'alamin</p></div><div class="arabic">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</div></div>
+      <div class="verse"><div class="eng"><p>The Most Compassionate, Most Merciful</p></div><div class="arabic">الرَّحْمَٰنِ الرَّحِيمِ</div></div>
+      <div class="verse"><div class="eng"><p>Master of the Day of Judgment</p></div><div class="arabic">مَالِكِ يَوْمِ الدِّينِ</div></div>
+      <div class="verse"><div class="eng"><p>You alone we worship and You alone we ask for help</p></div><div class="arabic">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</div></div>
+      <div class="verse"><div class="eng"><p>Guide us along the Straight Path</p></div><div class="arabic">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</div></div>
+      <div class="verse"><div class="eng"><p>The path of those upon whom You have bestowed favor, not of those who have evoked [Your] anger or of those who are astray</p><p style="font-style:italic;font-size:.8rem;color:var(--text-dim);">Siratal-ladhina an'amta 'alayhim ghayril-maghdubi 'alayhim wa-lad-dallin</p></div><div class="arabic">صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</div></div>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>Islamic Revert Guide &copy; <span id="year">2023</span> All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </footer>
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="surah-card"><div class="header">Surah Al-Ikhlas (112)</div><div class="verse"><div class="eng"><p>Say: He is Allah, the One</p></div><div class="arabic">قُلْ هُوَ اللَّهُ أَحَدٌ</div></div><div class="verse"><div class="eng"><p>Allah, the Eternal Refuge</p></div><div class="arabic">اللَّهُ الصَّمَدُ</div></div><div class="verse"><div class="eng"><p>He neither begets nor is begotten</p></div><div class="arabic">لَمْ يَلِدْ وَلَمْ يُولَدْ</div></div><div class="verse"><div class="eng"><p>And there is nothing comparable to Him</p></div><div class="arabic">وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ</div></div></div>
+      <div class="surah-card"><div class="header">Surah Al-Falaq (113)</div><div class="verse"><div class="eng"><p>Say: I seek refuge in the Lord of daybreak</p><p style="font-style:italic;font-size:.8rem;color:var(--text-dim)">Qul a'udhu bi rabbil-falaq</p></div><div class="arabic">قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ</div></div><div class="verse"><div class="eng"><p>From the evil of that which He created</p></div><div class="arabic">مِن شَرِّ مَا خَلَقَ</div></div></div>
+      <div class="surah-card"><div class="header">Surah An-Nas (114)</div><div class="verse"><div class="eng"><p>Say: I seek refuge in the Lord of mankind</p><p style="font-style:italic;font-size:.8rem;color:var(--text-dim)">Qul a'udhu bi rabbin-nas</p></div><div class="arabic">قُلْ أَعُوذُ بِرَبِّ النَّاسِ</div></div><div class="verse"><div class="eng"><p>The Sovereign of mankind</p></div><div class="arabic">مَلِكِ النَّاسِ</div></div></div>
+      <div class="surah-card"><div class="header">Ayatul Kursi (2:255)</div><div class="ayah-highlight"><p style="font-size:.85rem;">"Allah! There is no deity except Him, the Ever-Living, the Sustainer of existence… His Kursi extends over the heavens and the earth…"</p></div></div>
+    </div>
+  </div>
 
-    <button class="back-to-top" id="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+  <!-- LIFESTYLE -->
+  <div class="card">
+    <h2><i class="fas fa-hand-point-right"></i> Lifestyle & Community</h2>
+    <div class="grid-2">
+      <div class="pillar-card"><h3>🍽️ Halal Food</h3><p>Avoid pork, alcohol, and non-halal meat. Look for halal certification. Seafood and vegetarian options are safe.</p></div>
+      <div class="pillar-card"><h3>👔 Islamic Dress</h3><p>Modesty: loose-fitting clothes. Women may choose hijab. Men cover from navel to knee.</p></div>
+      <div class="pillar-card"><h3>🤝 Community</h3><p>Visit your local mosque, join study circles, find a mentor. Building connections is key to your journey.</p></div>
+      <div class="pillar-card"><h3>❤️ Character</h3><p>Truthfulness, patience, kindness, humility, gratitude. The Prophet said: "I was sent to perfect good character."</p></div>
+    </div>
+  </div>
 
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    <script>
-        function addResourceItem(title, description, link) {
-            const ul = document.getElementById('resource-list');
-            if (!ul) return;
+  <!-- RESOURCES -->
+  <div class="card">
+    <h2><i class="fas fa-link"></i> Resources</h2>
+    <div class="grid-2">
+      <div class="pillar-card"><h3>NewMuslims.com</h3><p>Structured eLearning from Level 1 to 10.</p></div>
+      <div class="pillar-card"><h3>WhyIslam Manual</h3><p>Quick start guide for new Muslims.</p></div>
+      <div class="pillar-card"><h3>Embrace Reverts</h3><p>Social and educational programs for converts.</p></div>
+      <div class="pillar-card"><h3>GainPeace</h3><p>New Muslim support services & mentorship.</p></div>
+    </div>
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="pillar-card"><h3>📚 Recommended Books</h3><ul><li>The Clear Quran (Khattab)</li><li>The New Muslim Guide</li><li>Welcome to Islam (Mustafa Umar)</li><li>Reclaim Your Heart (Mogahed)</li></ul></div>
+      <div class="pillar-card"><h3>🧠 Continuing Education</h3><ul><li>Quranic Arabic courses</li><li>Seerah (Prophet's life)</li><li>Fiqh basics</li><li>Local mosque classes</li></ul></div>
+    </div>
+  </div>
 
-            let li = document.createElement('li');
-            let a = document.createElement('a');
-            a.href = link;
-            a.textContent = title;
-            li.appendChild(a);
-            
-            if (description) {
-                let p = document.createElement('p');
-                p.textContent = description;
-                li.appendChild(p);
-            }
-            
-            ul.appendChild(li);
-        }
+  <footer><p>Islamic Revert Guide © 2026</p></footer>
+</div>
 
-        // Apply highlight class to key terms in the document
-        function highlightKeyTerms() {
-            const keyTerms = [
-                'Shahada', 'Salah', 'Zakat', 'Sawm', 'Hajj', 
-                'Allah', 'Quran', 'Sunnah', 'Prophet Muhammad', 'Ramadan',
-                'wudu', 'prayer', 'fasting', 'halal'
-            ];
-            
-            const paragraphs = document.querySelectorAll('p');
-            paragraphs.forEach(p => {
-                // Skip paragraphs that already have highlights
-                if (p.querySelector('.highlight')) return;
-                
-                keyTerms.forEach(term => {
-                    // Create regex that matches the term as a whole word with case insensitivity
-                    const regex = new RegExp(`\\b${term}\\b`, 'gi');
-                    
-                    // Only replace text nodes (not inside existing elements)
-                    const walker = document.createTreeWalker(p, NodeFilter.SHOW_TEXT);
-                    const textNodes = [];
-                    let node;
-                    while (node = walker.nextNode()) {
-                        textNodes.push(node);
-                    }
-                    
-                    textNodes.forEach(textNode => {
-                        const content = textNode.nodeValue;
-                        if (regex.test(content)) {
-                            const fragment = document.createDocumentFragment();
-                            let lastIndex = 0;
-                            let match;
-                            
-                            // Reset regex to start from beginning
-                            regex.lastIndex = 0;
-                            
-                            while ((match = regex.exec(content)) !== null) {
-                                // Add text before the match
-                                if (match.index > lastIndex) {
-                                    fragment.appendChild(document.createTextNode(
-                                        content.substring(lastIndex, match.index)
-                                    ));
-                                }
-                                
-                                // Create highlighted span for the match
-                                const highlightSpan = document.createElement('span');
-                                highlightSpan.className = 'highlight';
-                                highlightSpan.textContent = match[0];
-                                fragment.appendChild(highlightSpan);
-                                
-                                lastIndex = regex.lastIndex;
-                            }
-                            
-                            // Add remaining text
-                            if (lastIndex < content.length) {
-                                fragment.appendChild(document.createTextNode(
-                                    content.substring(lastIndex)
-                                ));
-                            }
-                            
-                            // Replace the text node with the fragment
-                            textNode.parentNode.replaceChild(fragment, textNode);
-                        }
-                    });
-                });
-            });
-        }
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 
-        document.addEventListener('DOMContentLoaded', function() {
-            // Theme switcher functionality
-            const toggleSwitch = document.querySelector('#checkbox');
-            const currentTheme = localStorage.getItem('theme') || 'light';
-            
-            // Set initial theme based on localStorage or system preference
-            if (currentTheme === 'dark' || (currentTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                toggleSwitch.checked = true;
-            }
-            
-            // Function to switch theme
-            function switchTheme(e) {
-                if (e.target.checked) {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                    localStorage.setItem('theme', 'light');
-                }
-            }
-            
-            // Event listener for theme switch
-            toggleSwitch.addEventListener('change', switchTheme, false);
+// Theme
+const tt=$('#themeToggle'), st=localStorage.getItem('revert-theme')||'light';
+document.documentElement.setAttribute('data-theme',st);
+tt.innerHTML=st==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';
+tt.onclick=()=>{const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('revert-theme',n);tt.innerHTML=n==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';};
 
-            // Add resource items
-            addResourceItem('Hope & Help UK', 'Offering revert Muslim support programs including personalized guidance, post-Shahadah support, and community integration.', 'https://hopeandhelp.uk/revert-muslim/');
-            addResourceItem('NewMuslims.com', 'A structured eLearning site with lessons ranging from Level 1 to Level 10, covering Islamic beliefs, worship, and social interaction.', 'https://www.newmuslims.com/');
-            addResourceItem('About Islam Seerah', 'Special folder for new converts covering the life of Prophet Muhammad with articles and videos.', 'https://aboutislam.net/reading-islam/in-focus/seerah-for-new-converts-special-folder/');
-            addResourceItem('Why Islam Manual', 'A quick start guide for new Muslims with tips on finding an Islamic mentor and recommended resources.', 'https://www.whyislam.org/manual/');
-            addResourceItem('Embrace Reverts', 'Offering programs to empower and integrate Muslim converts through social and educational spaces.', 'https://embracereverts.org/');
-            addResourceItem('American Islam New Members', 'Resources and support groups for new Muslims, including classes and community activities.', 'https://american-islam.org/new-members/');
-            addResourceItem('GainPeace New Muslim Services', 'Providing services that offer social support, education, and mentorship to new Muslims.', 'https://www.gainpeace.com/new-muslim-services');
-            addResourceItem('The Revert Channel', 'Video content created by and for Muslim converts.', 'https://www.therevertchannel.com/');
-            addResourceItem('Reverts Guide.com', 'Practical guidance for new Muslims on various aspects of Islamic life.', 'https://revertsguide.com/');
+// Expandable sections
+$$('.expand-btn').forEach(btn=>{btn.onclick=()=>{btn.classList.toggle('open');const content=btn.nextElementSibling;if(content&&content.classList.contains('expand-content'))content.classList.toggle('open');};});
 
-            // Highlight key terms
-            highlightKeyTerms();
+// Prayer tracker
+const prayers=[
+  {name:'Fajr',time:'Dawn',icon:'🌅'},
+  {name:'Dhuhr',time:'Noon',icon:'☀️'},
+  {name:'Asr',time:'Afternoon',icon:'🌤️'},
+  {name:'Maghrib',time:'Sunset',icon:'🌅'},
+  {name:'Isha',time:'Night',icon:'🌙'}
+];
+function loadPrayers(){
+  const key='revert-prayers-'+new Date().toDateString();
+  const saved=JSON.parse(localStorage.getItem(key)||'{}');
+  return saved;
+}
+function savePrayers(data){
+  const key='revert-prayers-'+new Date().toDateString();
+  localStorage.setItem(key,JSON.stringify(data));
+}
+function updateStreak(){
+  let streak=0;
+  const d=new Date();
+  for(let i=0;i<365;i++){
+    const day=new Date(d.getFullYear(),d.getMonth(),d.getDate()-i);
+    const k='revert-prayers-'+day.toDateString();
+    const data=JSON.parse(localStorage.getItem(k)||'{}');
+    if(Object.values(data).filter(Boolean).length>=5)streak++;
+    else if(i===0)continue; // today partial ok
+    else break;
+  }
+  $('#prayerStreak').textContent=streak;
+  $('#prayerMsg').textContent=streak>0?`Mashallah! ${streak} day streak!`:'Start tracking your prayers!';
+}
+function renderPrayers(){
+  const grid=$('#prayerGrid');
+  const data=loadPrayers();
+  grid.innerHTML='';
+  prayers.forEach(p=>{
+    const btn=document.createElement('button');
+    btn.className='prayer-btn'+(data[p.name]?' done':'');
+    btn.innerHTML=`<div class="check">✓</div><div class="name">${p.icon} ${p.name}</div><div class="time">${p.time}</div>`;
+    btn.onclick=()=>{
+      const d=loadPrayers();
+      d[p.name]=!d[p.name];
+      savePrayers(d);
+      renderPrayers();
+      updateStreak();
+    };
+    grid.appendChild(btn);
+  });
+  updateStreak();
+}
+renderPrayers();
 
-            // Initialize expandable sections
-            const expandableHeaders = document.querySelectorAll('.expandable-header');
-            expandableHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const content = header.nextElementSibling;
-                    header.classList.toggle('active');
-                    
-                    if (header.classList.contains('active')) {
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                        content.classList.add('open');
-                        header.querySelector('i').classList.replace('fa-chevron-down', 'fa-chevron-up');
-                    } else {
-                        content.style.maxHeight = 0;
-                        content.classList.remove('open');
-                        header.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
-                    }
-                });
-            });
-
-            // Back to top button
-            const backToTop = document.getElementById('back-to-top');
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    backToTop.classList.add('show');
-                } else {
-                    backToTop.classList.remove('show');
-                }
-            });
-
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Update year in footer
-            document.getElementById('year').textContent = new Date().getFullYear();
-
-            // Initialize ScrollReveal with enhanced animations
-            ScrollReveal().reveal('.card', { 
-                delay: 200,
-                distance: '30px',
-                duration: 800,
-                easing: 'cubic-bezier(0.5, 0, 0, 1)',
-                origin: 'bottom',
-                interval: 100,
-                opacity: 0,
-                scale: 0.98
-            });
-        });
-    </script>
+// Back to top
+const bt=$('#backToTop');
+window.addEventListener('scroll',()=>bt.classList.toggle('visible',window.scrollY>300));
+bt.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+</script>
 </body>
 </html>

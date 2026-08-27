@@ -1,0 +1,10 @@
+{
+  "name": "Revert Guide — Your Journey in Islam",
+  "short_name": "Revert Guide",
+  "description": "Comprehensive interactive guide for new Muslims covering beliefs, prayer, and lifestyle",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f5f2fa",
+  "theme_color": "#1e3a8a",
+  "icons": [{"src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕌</text></svg>", "sizes": "any", "type": "image/svg+xml"}]
+}
